@@ -14,18 +14,22 @@ main {
   margin: 0 2rem;
 }
 
+input {
+  display: none;
+}
+
 .card {
   width: 40px;
   height: 40px;
   margin: 1rem;
   padding: 1rem;
   font-size: 2rem;
-  cursor: pointer;
   perspective: 300px;
 }
 
 .content {
   position: absolute;
+  cursor: pointer;
   width: 100%;
   height: 100%;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
@@ -33,7 +37,7 @@ main {
   transform-style: preserve-3d;
 }
 
-.card:active .content {
+[id^="btnControl"]:checked + label .content {
   transform: rotateY(180deg);
   transition: transform 0.5s;
 }

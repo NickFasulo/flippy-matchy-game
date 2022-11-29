@@ -85,16 +85,17 @@ const shuffle = array => {
 shuffle(hardArray)
 
 const cardStrings = hardArray
-  .map(emoji => {
-    return `<div class="card">
-              <div class="content">
-                <div class="front">
+  .map((emoji, i) => {
+    return `<input type="checkbox" id="btnControl${i}"/>
+              <label class="card" for="btnControl${i}">
+                <div class="content">
+                  <div class="front">
+                  </div>
+                  <div class="back">
+                    ${emoji}
+                  </div>
                 </div>
-                <div class="back">
-                  ${emoji}
-                </div>
-              </div>
-            </div>`
+              </label>`
   })
   .join('')
 
