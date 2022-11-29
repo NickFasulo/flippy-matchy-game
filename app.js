@@ -80,9 +80,7 @@ const cardStrings = hardArray
 
 const cardNodes = document.createRange().createContextualFragment(cardStrings)
 
-const board = document.getElementById('board')
-
-board.appendChild(cardNodes)
+document.getElementById('board').appendChild(cardNodes)
 
 // console.log(cardNodes)
 

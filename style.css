@@ -6,3 +6,21 @@ h3 {
   text-align: center;
   margin: 1rem 0;
 }
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+main div {
+  width: fit-content;
+  margin: 1rem;
+  padding: 1rem;
+  font-size: 2rem;
+  background-color: blanchedalmond;
+  border: 2px solid salmon;
+  border-radius: 5px;
+  cursor: pointer;
+}
