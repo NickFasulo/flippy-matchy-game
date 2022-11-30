@@ -60,3 +60,8 @@ input {
   align-items: center;
   transform: rotateY(180deg);
 }
+
+#replay {
+  visibility: hidden;
+  cursor: pointer;
+}

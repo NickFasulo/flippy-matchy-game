@@ -66,7 +66,6 @@ const hardArray = [
 ]
 
 mediumArray = hardArray.slice(0, 32)
-
 easyArray = hardArray.slice(0, 16)
 
 // Fisher-Yates algorithm
@@ -87,10 +86,12 @@ const limitedChecked = () => {
   let compare = []
 
   for (let i = 0; i < checks.length; i++) {
-    if (checks[i].checked) compare.push(checks[i])
+    if (checks[i].checked && !matchedCards.includes(checks[i])) {
+      compare.push(checks[i])
+    }
   }
 
-  if (compare.length !== 1) {
+  if (compare.length === 2) {
     if (compare[0].value === compare[1].value) {
       matchedCards.push(compare[0], compare[1])
       compare = []
@@ -99,14 +100,18 @@ const limitedChecked = () => {
       compare[1].checked = false
     }
   }
+
+  if (matchedCards.length === checks.length) {
+    document.getElementById('replay').style.visibility = 'visible'
+  }
 }
 
 // add in if conditional based on if user clicks easy / medium / hard
 // based on what they select, that array will be passed into shuffle and map function
 
-shuffle(hardArray)
+shuffle(easyArray)
 
-const cardStrings = hardArray
+const cardStrings = easyArray
   .map((emoji, i) => {
     return `<input type="checkbox" id="cardControl${i}" name="check" value="${emoji}" onclick="return limitedChecked()"/>
             <label class="card" for="cardControl${i}">
@@ -122,5 +127,4 @@ const cardStrings = hardArray
   .join('')
 
 const cardNodes = document.createRange().createContextualFragment(cardStrings)
-
 document.getElementById('board').appendChild(cardNodes)
