@@ -37,7 +37,7 @@ input {
   transform-style: preserve-3d;
 }
 
-[id^="btnControl"]:checked + label .content {
+[id^="cardControl"]:checked + label .content {
   transform: rotateY(180deg);
   transition: transform 0.5s;
 }
