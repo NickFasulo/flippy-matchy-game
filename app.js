@@ -95,7 +95,7 @@ const cardFlip = () => {
     ) {
       checks[i].checked = false
     }
-    if (checks[i].checked && !matchedCards.includes(checks[i])) {
+    if (!matchedCards.includes(checks[i]) && checks[i].checked) {
       compare.push(checks[i])
     }
   }
