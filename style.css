@@ -15,7 +15,15 @@ button {
   text-decoration: none;
   font-size: larger;
   color: inherit;
+  border: none;
+  background-color: transparent;
   font-family: inherit;
+}
+
+a:hover::before,
+button:hover::before {
+  content: "→";
+  color: rgb(200, 0, 0);
 }
 
 input {
