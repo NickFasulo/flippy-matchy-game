@@ -123,9 +123,9 @@ const cardFlip = () => {
 // add in if conditional based on if user clicks easy / medium / hard
 // based on what they select, that array will be passed into shuffle and map function
 
-shuffle(mediumArray)
+shuffle(easyArray)
 
-const cardStrings = mediumArray
+const cardStrings = easyArray
   .map((emoji, i) => {
     return `<input type="checkbox" id="cardControl${i}" name="check" value="${emoji}" onclick="return cardFlip()"/>
             <label class="card" for="cardControl${i}">
