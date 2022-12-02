@@ -73,7 +73,6 @@ const shuffle = array => {
   for (let i = 0; i < array.length; i++) {
     const j = Math.round(Math.random() * i)
     const temp = array[i]
-
     array[i] = array[j]
     array[j] = temp
   }
@@ -81,11 +80,17 @@ const shuffle = array => {
 
 const checks = document.getElementsByName('check')
 const matchedCards = []
+let triesCount = 0
 
-const limitedChecked = () => {
+const cardFlip = () => {
+  const checkedLength = document.querySelectorAll(
+    'input[type="checkbox"]:checked'
+  ).length
   let compare = []
 
   for (let i = 0; i < checks.length; i++) {
+    if (matchedCards.includes(checks[i])) checks[i].setAttribute('disabled', '')
+    if (checkedLength > 2 && !checks[i].disabled) checks[i].checked = false
     if (checks[i].checked && !matchedCards.includes(checks[i])) {
       compare.push(checks[i])
     }
@@ -96,8 +101,11 @@ const limitedChecked = () => {
       matchedCards.push(compare[0], compare[1])
       compare = []
     } else {
-      compare[0].checked = false
-      compare[1].checked = false
+      triesCount++
+      setTimeout(() => {
+        compare[0].checked = false
+        compare[1].checked = false
+      }, 500)
     }
   }
 
@@ -106,6 +114,8 @@ const limitedChecked = () => {
   }
 }
 
+// TODO: fix being able to flip cards over once they are matched
+
 // add in if conditional based on if user clicks easy / medium / hard
 // based on what they select, that array will be passed into shuffle and map function
 
@@ -113,7 +123,7 @@ shuffle(easyArray)
 
 const cardStrings = easyArray
   .map((emoji, i) => {
-    return `<input type="checkbox" id="cardControl${i}" name="check" value="${emoji}" onclick="return limitedChecked()"/>
+    return `<input type="checkbox" id="cardControl${i}" name="check" value="${emoji}" onclick="return cardFlip()"/>
             <label class="card" for="cardControl${i}">
               <div class="content">
                 <div class="front">
