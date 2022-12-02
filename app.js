@@ -89,8 +89,12 @@ const cardFlip = () => {
   let compare = []
 
   for (let i = 0; i < checks.length; i++) {
-    if (matchedCards.includes(checks[i])) checks[i].setAttribute('disabled', '')
-    if (checkedLength > 2 && !checks[i].disabled) checks[i].checked = false
+    if (
+      !matchedCards.includes(checks[i]) &&
+      checkedLength - matchedCards.length > 2
+    ) {
+      checks[i].checked = false
+    }
     if (checks[i].checked && !matchedCards.includes(checks[i])) {
       compare.push(checks[i])
     }
@@ -98,6 +102,8 @@ const cardFlip = () => {
 
   if (compare.length === 2) {
     if (compare[0].value === compare[1].value) {
+      compare[0].disabled = true
+      compare[1].disabled = true
       matchedCards.push(compare[0], compare[1])
       compare = []
     } else {
@@ -114,14 +120,12 @@ const cardFlip = () => {
   }
 }
 
-// TODO: fix being able to flip cards over once they are matched
-
 // add in if conditional based on if user clicks easy / medium / hard
 // based on what they select, that array will be passed into shuffle and map function
 
-shuffle(easyArray)
+shuffle(mediumArray)
 
-const cardStrings = easyArray
+const cardStrings = mediumArray
   .map((emoji, i) => {
     return `<input type="checkbox" id="cardControl${i}" name="check" value="${emoji}" onclick="return cardFlip()"/>
             <label class="card" for="cardControl${i}">
