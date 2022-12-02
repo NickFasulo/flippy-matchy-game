@@ -4,17 +4,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="./app.js"></script>
     <link rel="stylesheet" href="style.css" />
+    <!-- <script defer src="./.js"></script> -->
     <title>Flippy Matchy</title>
   </head>
   <body>
-    <h3>Flippy Matchy</h3>
-    <main>
-      <div id="board"></div>
-      <button id="replay" onClick="window.location.reload()">
-        Play again?
-      </button>
-    </main>
+    <h1>Flippy Matchy</h1>
+    <h3>Select level to start:</h3>
+    <div class="buttons">
+      <!-- <button class="easy" onclick="pickLevel('easy')">Easy</button>
+      <button class="medium" onclick="pickLevel('medium')">Medium</button>
+      <button class="hard" onclick="pickLevel('hard')">Hard</button> -->
+      <a href='board.html?easy'>Easy</a>
+      <a href='board.html?medium'>Medium</a>
+      <a href='board.html?hard'>Hard</a>
+    </div>
   </body>
 </html>

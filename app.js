@@ -1,16 +1,18 @@
 const hardArray = [
-  '🤖',
-  '🤖',
+  '😜',
+  '😜',
   '🐞',
   '🐞',
-  '🎸',
-  '🎸',
+  '🍩',
+  '🍩',
+  '🤙',
+  '🤙',
   '☕',
   '☕',
   '🍀',
   '🍀',
-  '🎮',
-  '🎮',
+  '🌀',
+  '🌀',
   '⚓',
   '⚓',
   '🏈',
@@ -19,16 +21,14 @@ const hardArray = [
   '⚡',
   '⛵',
   '⛵',
-  '😜',
-  '😜',
+  '🤖',
+  '🤖',
   '✌',
   '✌',
   '⭐',
   '⭐',
-  '🌀',
-  '🌀',
-  '🌈',
-  '🌈',
+  '🔥',
+  '🔥',
   '🌧',
   '🌧',
   '🌴',
@@ -41,32 +41,40 @@ const hardArray = [
   '😍',
   '🍄',
   '🍄',
+  '🌈',
+  '🌈',
   '🍔',
   '🍔',
-  '🎤',
-  '🎤',
-  '🍩',
-  '🍩',
   '🍭',
   '🍭',
   '😱',
   '😱',
-  '🎈',
-  '🎈',
-  '🎨',
-  '🎨',
-  '🏖',
-  '🏖',
-  '🐕',
-  '🐕',
-  '👏',
-  '👏',
-  '👾',
-  '👾'
+  '💰',
+  '💰'
 ]
 
-mediumArray = hardArray.slice(0, 32)
-easyArray = hardArray.slice(0, 16)
+// add in if conditional based on if user clicks easy / medium / hard
+// based on what they select, that array will be passed into shuffle and map function
+
+// additional feature: change flip time based on difficulty selected
+
+// additional feature: add border highlight when cards matched
+
+// TODO: make mobile friendly
+
+// TODO: add new level button
+
+const mediumArray = hardArray.slice(0, 32)
+const easyArray = hardArray.slice(0, 18)
+
+// const pickLevel = (level) => {
+//   let selectedArray
+
+//   if (level === 'hard') selectedArray = hardArray
+//   if (level === 'medium') selectedArray = mediumArray
+//   if (level === 'easy') selectedArray = easyArray
+//   return location.href = './board.html'
+// }
 
 // Fisher-Yates algorithm
 const shuffle = array => {
@@ -80,6 +88,7 @@ const shuffle = array => {
 
 const checks = document.getElementsByName('check')
 const matchedCards = []
+const flipTime = 600
 let triesCount = 0
 
 const cardFlip = () => {
@@ -111,7 +120,7 @@ const cardFlip = () => {
       setTimeout(() => {
         compare[0].checked = false
         compare[1].checked = false
-      }, 500)
+      }, flipTime)
     }
   }
 
@@ -120,12 +129,16 @@ const cardFlip = () => {
   }
 }
 
-// add in if conditional based on if user clicks easy / medium / hard
-// based on what they select, that array will be passed into shuffle and map function
+const query = parent.document.URL.match(/\?(.*)/g)[0]
+let selectedArray
 
-shuffle(easyArray)
+if (query === '?easy') selectedArray = easyArray
+if (query === '?medium') selectedArray = mediumArray
+if (query === '?hard') selectedArray = hardArray
 
-const cardStrings = easyArray
+shuffle(selectedArray)
+
+const cardStrings = selectedArray
   .map((emoji, i) => {
     return `<input type="checkbox" id="cardControl${i}" name="check" value="${emoji}" onclick="return cardFlip()"/>
             <label class="card" for="cardControl${i}">
