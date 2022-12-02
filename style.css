@@ -80,6 +80,12 @@ h2 {
   height: 50%;
 }
 
+.tries-counter {
+  position: absolute;
+  top: 0;
+  right: 12rem;
+}
+
 .easy {
   width: 44rem;
 }

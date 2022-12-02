@@ -72,10 +72,10 @@ const shuffle = array => {
   }
 }
 
+let triesCount = document.getElementById('tries').innerHTML
 const checks = document.getElementsByName('check')
 const matchedCards = []
 const flipTime = 600
-let triesCount = 0
 
 // const initialBoard = () => {
 //   for (let i = 0; i < checks.length; i++) {
@@ -115,6 +115,7 @@ const cardFlip = () => {
       compare = []
     } else {
       triesCount++
+      tries.innerHTML = triesCount
       setTimeout(() => {
         compare[0].checked = false
         compare[1].checked = false
