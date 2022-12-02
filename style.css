@@ -6,8 +6,11 @@ body {
   -webkit-user-select: none;
 }
 
-a {
+a,
+button {
+  cursor: pointer;
   text-decoration: none;
+  font-size: larger;
 }
 
 input {
@@ -20,36 +23,40 @@ label {
   justify-content: center;
 }
 
-button {
-  cursor: pointer;
-}
-
 h1,
-h3 {
+h2 {
   text-align: center;
   margin: 1rem 0;
 }
 
 #start-container {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-30%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8rem;
+  height: 100vh;
+}
+
+#start-container h1 {
+  font-size: 4rem;
 }
 
 #start-container h3 {
   margin-top: 3rem;
 }
 
-.level-buttons {
+.start-buttons {
   display: flex;
   justify-content: space-evenly;
+  width: 16rem;
 }
 
 #board-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  height: 88vh;
 }
 
 #board {
@@ -58,8 +65,23 @@ h3 {
   justify-content: center;
 }
 
+.board-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: fit-content;
+  height: 10rem;
+}
+
+.board-buttons div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 50%;
+}
+
 .easy {
-  width: 46rem;
+  width: 44rem;
 }
 
 .medium {
@@ -114,6 +136,7 @@ h3 {
 }
 
 #replay {
-  visibility: hidden;
+  /* visibility: hidden; */
   cursor: pointer;
+  margin: 0;
 }
