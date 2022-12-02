@@ -15,8 +15,6 @@ const hardArray = [
   '🌀',
   '⚓',
   '⚓',
-  '🏈',
-  '🏈',
   '⚡',
   '⚡',
   '⛵',
@@ -33,8 +31,6 @@ const hardArray = [
   '🌧',
   '🌴',
   '🌴',
-  '🏀',
-  '🏀',
   '🌻',
   '🌻',
   '😍',
@@ -53,28 +49,18 @@ const hardArray = [
   '💰'
 ]
 
-// add in if conditional based on if user clicks easy / medium / hard
-// based on what they select, that array will be passed into shuffle and map function
-
 // additional feature: change flip time based on difficulty selected
 
 // additional feature: add border highlight when cards matched
 
+// additional feature: make all cards shown for a split second on board page load
+
 // TODO: make mobile friendly
 
-// TODO: add new level button
+// TODO: display tries count
 
 const mediumArray = hardArray.slice(0, 32)
 const easyArray = hardArray.slice(0, 18)
-
-// const pickLevel = (level) => {
-//   let selectedArray
-
-//   if (level === 'hard') selectedArray = hardArray
-//   if (level === 'medium') selectedArray = mediumArray
-//   if (level === 'easy') selectedArray = easyArray
-//   return location.href = './board.html'
-// }
 
 // Fisher-Yates algorithm
 const shuffle = array => {
@@ -90,6 +76,18 @@ const checks = document.getElementsByName('check')
 const matchedCards = []
 const flipTime = 600
 let triesCount = 0
+
+// const initialBoard = () => {
+//   for (let i = 0; i < checks.length; i++) {
+//     checks[i].checked = true
+//   }
+
+//   setTimeout(() => {
+//     for (let i = 0; i < checks.length; i++) {
+//       checks[i].checked = false
+//     }
+//   }, 1000)
+// }
 
 const cardFlip = () => {
   const checkedLength = document.querySelectorAll(
@@ -130,11 +128,21 @@ const cardFlip = () => {
 }
 
 const query = parent.document.URL.match(/\?(.*)/g)[0]
+const board = document.getElementById('board')
 let selectedArray
 
-if (query === '?easy') selectedArray = easyArray
-if (query === '?medium') selectedArray = mediumArray
-if (query === '?hard') selectedArray = hardArray
+if (query === '?easy') {
+  selectedArray = easyArray
+  board.classList.add('easy')
+}
+if (query === '?medium') {
+  selectedArray = mediumArray
+  board.classList.add('medium')
+}
+if (query === '?hard') {
+  selectedArray = hardArray
+  board.classList.add('hard')
+}
 
 shuffle(selectedArray)
 
@@ -154,4 +162,4 @@ const cardStrings = selectedArray
   .join('')
 
 const cardNodes = document.createRange().createContextualFragment(cardStrings)
-document.getElementById('board').appendChild(cardNodes)
+board.appendChild(cardNodes)
