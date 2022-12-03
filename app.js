@@ -49,8 +49,6 @@ const hardArray = [
   '💰'
 ]
 
-// additional feature: change flip time based on difficulty selected
-
 // additional feature: add border highlight when cards matched
 
 // additional feature: make all cards shown for a split second on board page load
