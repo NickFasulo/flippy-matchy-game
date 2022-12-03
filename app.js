@@ -57,8 +57,6 @@ const hardArray = [
 
 // TODO: make mobile friendly
 
-// TODO: display tries count
-
 const mediumArray = hardArray.slice(0, 32)
 const easyArray = hardArray.slice(0, 18)
 
@@ -75,7 +73,7 @@ const shuffle = array => {
 let triesCount = document.getElementById('tries').innerHTML
 const checks = document.getElementsByName('check')
 const matchedCards = []
-const flipTime = 600
+const flipTime = 750
 
 // const initialBoard = () => {
 //   for (let i = 0; i < checks.length; i++) {

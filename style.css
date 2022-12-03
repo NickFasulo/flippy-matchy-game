@@ -52,6 +52,17 @@ h2 {
 
 #start-container h1 {
   font-size: 4rem;
+  animation-name: flip;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-delay: 0;
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateY(360deg);
+  }
 }
 
 #start-container h3 {
@@ -61,7 +72,12 @@ h2 {
 .start-buttons {
   display: flex;
   justify-content: space-evenly;
-  width: 16rem;
+  width: 18rem;
+}
+
+.start-buttons a {
+  text-align: center;
+  width: 6rem;
 }
 
 .board-header {
@@ -158,7 +174,7 @@ h2 {
 }
 
 #replay {
-  /* visibility: hidden; */
+  visibility: hidden;
   cursor: pointer;
   margin: 0;
 }
