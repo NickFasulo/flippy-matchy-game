@@ -49,14 +49,23 @@ const hardArray = [
   '💰'
 ]
 
-// additional feature: add border highlight when cards matched
-
 // additional feature: make all cards shown for a split second on board page load
 
 // TODO: make mobile friendly
 
-const mediumArray = hardArray.slice(0, 32)
 const easyArray = hardArray.slice(0, 18)
+const mediumArray = hardArray.slice(0, 32)
+
+const replay = document.getElementById('replay')
+const newLevel = document.getElementById('new-level')
+
+const flipSound = document.getElementById('flip-sound')
+const failSound = document.getElementById('fail-sound')
+const buttonSound = document.getElementById('button-sound')
+const victorySound = document.getElementById('victory-sound')
+
+replay.addEventListener('mouseover', () => buttonSound.play())
+newLevel.addEventListener('mouseover', () => buttonSound.play())
 
 // Fisher-Yates algorithm
 const shuffle = array => {
@@ -91,6 +100,8 @@ const cardFlip = () => {
   ).length
   let compare = []
 
+  flipSound.play()
+
   for (let i = 0; i < checks.length; i++) {
     if (
       !matchedCards.includes(checks[i]) &&
@@ -115,12 +126,15 @@ const cardFlip = () => {
       setTimeout(() => {
         compare[0].checked = false
         compare[1].checked = false
+        failSound.play()
       }, flipTime)
     }
   }
 
   if (matchedCards.length === checks.length) {
+    document.getElementById('nice').style.visibility = 'visible'
     document.getElementById('replay').style.visibility = 'visible'
+    victorySound.play()
   }
 }
 
