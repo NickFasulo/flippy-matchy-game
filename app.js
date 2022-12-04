@@ -89,6 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = 0; i < checks.length; i++) {
       checks[i].checked = false
     }
+    failSound.play()
   }, 1000)
 })
 

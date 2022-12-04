@@ -203,6 +203,7 @@ h2 {
   top: 34%;
   left: 50%;
   transform: translate(-50%, -50%);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 #replay {
