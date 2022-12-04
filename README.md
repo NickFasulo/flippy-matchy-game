@@ -1,5 +1,5 @@
 # Flippy Matchy
-Play here: ---
+Play here: https://nickfasulo.github.io/flippy-matchy-game
 
 Flippy matchy is a match card game. To win you need to match each pair of identical cards in a deck. There are three levels to choose from: Easy, Medium, and Hard. The difference in levels are the amount of cards that are on the board. 
 
@@ -22,3 +22,4 @@ HTML, CSS, JavaScript
 ## Future Features
 - Randomize emojis used for each level
 - Include highest score (lowest amount of tries) for each level played.
+- Add countdown timer.

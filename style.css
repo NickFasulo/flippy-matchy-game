@@ -20,13 +20,6 @@ body {
   background-size: cover;
 }
 
-.board-main {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  height: 100vh;
-}
-
 a,
 button {
   cursor: pointer;
@@ -100,6 +93,13 @@ h2 {
 
 .placeholder {
   width: 4.5rem;
+}
+
+.board-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100vh;
 }
 
 .board-header {
