@@ -82,17 +82,17 @@ const checks = document.getElementsByName('check')
 const matchedCards = []
 const flipTime = 750
 
-// const initialBoard = () => {
-//   for (let i = 0; i < checks.length; i++) {
-//     checks[i].checked = true
-//   }
-
-//   setTimeout(() => {
-//     for (let i = 0; i < checks.length; i++) {
-//       checks[i].checked = false
-//     }
-//   }, 1000)
-// }
+// show cards on page load
+document.addEventListener('DOMContentLoaded', () => {
+  for (let i = 0; i < checks.length; i++) {
+    checks[i].checked = true
+  }
+  setTimeout(() => {
+    for (let i = 0; i < checks.length; i++) {
+      checks[i].checked = false
+    }
+  }, 1000)
+})
 
 const cardFlip = () => {
   const checkedLength = document.querySelectorAll(
