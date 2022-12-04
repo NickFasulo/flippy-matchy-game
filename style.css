@@ -108,7 +108,8 @@ h2 {
 }
 
 .board-header h3 {
-  width: 5rem;
+  width: 4.5rem;
+  overflow: visible;
 }
 
 #board-container {
@@ -132,8 +133,6 @@ h2 {
 
 .board-buttons button {
   margin: 0 4rem;
-  width: fit-content;
-  height: fit-content;
 }
 
 .easy {
