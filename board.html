@@ -9,21 +9,20 @@
     <title>Flippy Matchy</title>
   </head>
   <body>
-    <div class="board-header">
-      <div class="placeholder"></div>
-      <h2>Flippy Matchy</h2>
-      <h3>Tries: <span id="tries">0</span></h3>
-    </div>
-    <main id="board-container">
-      <div id="board"></div>
-      <div class="board-buttons">
-        <h1 id="nice">Nice! 🎉</h1>
-        <div>
-          <button id="replay" onclick="window.location.reload()">
-            Play again?
-          </button>
+    <main class="board-main">
+      <div class="board-header">
+        <div class="placeholder"></div>
+        <h2>Flippy Matchy</h2>
+        <h3>Tries: <span id="tries">0</span></h3>
+      </div>
+      <div id="board-container">
+        <div id="board"><h1 id="nice">Nice! &nbsp;🎉</h1></div>
+        <div class="board-buttons">
           <button id="new-level" onclick="location.href='index.html'">
             New Level
+          </button>
+          <button id="replay" onclick="window.location.reload()">
+            Play again?
           </button>
         </div>
       </div>

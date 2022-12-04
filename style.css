@@ -19,6 +19,13 @@ body {
   background-size: cover;
 }
 
+.board-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100vh;
+}
+
 a,
 button {
   cursor: pointer;
@@ -69,6 +76,10 @@ h2 {
   animation-delay: 0;
 }
 
+#start-container h2 {
+  margin-top: 3rem;
+}
+
 @keyframes flip {
   0% {
     transform: rotateY(360deg);
@@ -87,11 +98,11 @@ h2 {
 
 .start-buttons a {
   text-align: center;
-  width: 4rem;
+  width: 4.5rem;
 }
 
 .placeholder {
-  width: 60.5px;
+  width: 4.5rem;
 }
 
 .board-header {
@@ -99,12 +110,15 @@ h2 {
   justify-content: space-evenly;
 }
 
+.board-header h3 {
+  width: 4.5rem;
+}
+
 #board-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  height: 88vh;
+  justify-content: flex-start;
 }
 
 #board {
@@ -115,17 +129,14 @@ h2 {
 
 .board-buttons {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: fit-content;
-  height: 10rem;
+  justify-content: center;
+  margin: 2rem 0;
 }
 
-.board-buttons div {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 50%;
+.board-buttons button {
+  margin: 0 4rem;
+  width: 8rem;
+  height: fit-content;
 }
 
 .easy {
@@ -185,11 +196,68 @@ h2 {
 }
 
 #nice {
-  visibility: hidden;
+  display: none;
+  position: absolute;
+  background: blanchedalmond;
+  border: 4px solid salmon;
+  border-radius: 5px;
+  padding: 1rem;
+  z-index: 5;
+  top: 34%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #replay {
-  visibility: hidden;
-  cursor: pointer;
-  margin: 0;
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  a,
+  button {
+    font-size: 1.3rem;
+  }
+
+  #start-container h1 {
+    font-size: 3.5rem;
+  }
+
+  .board-header {
+    justify-content: space-between;
+    margin: 0 4rem;
+  }
+
+  .board-header h3 {
+    text-align: right;
+  }
+
+  #board-container {
+    justify-content: space-around;
+  }
+
+  .board-buttons button {
+    margin: 0 1rem;
+  }
+
+  #nice {
+    top: 36%;
+  }
+
+  .placeholder {
+    display: none;
+  }
+
+  .card {
+    width: 30px;
+    height: 30px;
+  }
+
+  .easy {
+    width: 22rem;
+  }
+
+  .medium,
+  .hard {
+    width: 26rem;
+  }
 }

@@ -132,11 +132,13 @@ const cardFlip = () => {
   }
 
   if (matchedCards.length === checks.length) {
-    document.getElementById('nice').style.visibility = 'visible'
-    document.getElementById('replay').style.visibility = 'visible'
+    document.getElementById('nice').style.display = 'inline'
+    document.getElementById('replay').style.display = 'inline'
     victorySound.play()
   }
 }
+
+console.log(document.getElementById('nice').style)
 
 const query = parent.document.URL.match(/\?(.*)/g)[0]
 const board = document.getElementById('board')
