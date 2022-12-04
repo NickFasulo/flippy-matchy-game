@@ -6,6 +6,7 @@ body {
   -ms-user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
   font-family: 'Nerko One', 'Acme', 'Roboto', sans-serif;
   background: linear-gradient(
       180deg,
@@ -60,14 +61,14 @@ h2 {
   margin: 1rem 0;
 }
 
-#start-container {
+#start-main {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 8rem;
 }
 
-#start-container h1 {
+#start-main h1 {
   font-size: 4rem;
   animation-name: flip;
   animation-duration: 1s;
@@ -76,17 +77,13 @@ h2 {
   animation-delay: 0;
 }
 
-#start-container h2 {
-  margin-top: 3rem;
-}
-
 @keyframes flip {
   0% {
     transform: rotateY(360deg);
   }
 }
 
-#start-container h3 {
+#start-main h2 {
   margin-top: 3rem;
 }
 
@@ -258,6 +255,6 @@ h2 {
 
   .medium,
   .hard {
-    width: 26rem;
+    width: 24rem;
   }
 }
