@@ -137,15 +137,15 @@ h2 {
 }
 
 .easy {
-  width: 44rem;
+  width: 43rem;
 }
 
 .medium {
-  width: 58rem;
+  width: 57rem;
 }
 
 .hard {
-  width: 86rem;
+  width: 85.5rem;
 }
 
 .card {
@@ -215,7 +215,7 @@ h2 {
     font-size: 1.3rem;
   }
 
-  #start-container h1 {
+  #start-main h1 {
     font-size: 3.5rem;
   }
 
@@ -250,11 +250,11 @@ h2 {
   }
 
   .easy {
-    width: 22rem;
+    width: 18rem;
   }
 
   .medium,
   .hard {
-    width: 24rem;
+    width: 23.5rem;
   }
 }
