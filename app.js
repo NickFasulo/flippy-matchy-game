@@ -49,16 +49,13 @@ const hardArray = [
   '💰'
 ]
 
-// additional feature: make all cards shown for a split second on board page load
-
-// TODO: make mobile friendly
-
 const easyArray = hardArray.slice(0, 18)
 const mediumArray = hardArray.slice(0, 32)
 
 const replay = document.getElementById('replay')
 const newLevel = document.getElementById('new-level')
 
+// sound bites
 const flipSound = document.getElementById('flip-sound')
 const failSound = document.getElementById('fail-sound')
 const buttonSound = document.getElementById('button-sound')
@@ -87,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
   for (let i = 0; i < checks.length; i++) {
     checks[i].checked = true
   }
+
   setTimeout(() => {
     for (let i = 0; i < checks.length; i++) {
       checks[i].checked = false
@@ -137,8 +135,6 @@ const cardFlip = () => {
     victorySound.play()
   }
 }
-
-console.log(document.getElementById('nice').style)
 
 const query = parent.document.URL.match(/\?(.*)/g)[0]
 const board = document.getElementById('board')
