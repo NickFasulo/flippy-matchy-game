@@ -236,7 +236,7 @@ h2 {
 }
 
 #replay {
-  /* display: none; */
+  display: none;
 }
 
 @media screen and (max-width: 480px) {
@@ -247,13 +247,19 @@ h2 {
     width: 9rem;
   }
 
+  a:hover,
+  button:hover {
+    font-size: 1.3rem;
+  }
+
   #start-main h1 {
     font-size: 3.5rem;
   }
 
   .board-header {
     justify-content: space-between;
-    margin: 0 4rem;
+    margin-left: 4rem;
+    padding-right: 4rem;
   }
 
   #board-container {
