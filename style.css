@@ -207,7 +207,7 @@ h2 {
   padding: 1rem;
   z-index: 5;
   top: 30%;
-  left: 44.8%;
+  margin: 0 auto;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   animation-name: bounce;
   -moz-animation-name: bounce;
@@ -263,7 +263,6 @@ h2 {
 
   #nice {
     top: 36%;
-    left: 30.5%
   }
 
   .placeholder {
