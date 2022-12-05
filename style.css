@@ -108,7 +108,6 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  height: 100vh;
 }
 
 .board-header {
@@ -252,8 +251,7 @@ h2 {
 
   .board-header {
     justify-content: space-between;
-    margin-left: 4rem;
-    padding-right: 4rem;
+    margin: 0 4rem;
   }
 
   #board-container {
