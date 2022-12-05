@@ -137,6 +137,7 @@ const cardFlip = () => {
   }
 }
 
+// select array based on what query string is passed in
 const query = parent.document.URL.match(/\?(.*)/g)[0]
 const board = document.getElementById('board')
 let selectedArray

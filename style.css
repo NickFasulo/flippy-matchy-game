@@ -177,6 +177,8 @@ h2 {
 
 [id^='cardControl']:checked + label .content {
   transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
   transition: transform 0.5s;
 }
 
@@ -197,6 +199,9 @@ h2 {
   align-items: center;
   justify-content: center;
   transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
 }
 
 #nice {
@@ -258,8 +263,8 @@ h2 {
 
   .board-header {
     justify-content: space-between;
-    margin-left: 4rem;
     padding-right: 4rem;
+    margin-left: 4rem;
   }
 
   #board-container {

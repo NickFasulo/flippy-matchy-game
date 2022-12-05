@@ -20,7 +20,7 @@ _Mobile friendly_
 
 ## Tech Used
 
-HTML, CSS, JavaScript
+HTML, CSS, Vanilla JavaScript
 
 ## Future Features
 
