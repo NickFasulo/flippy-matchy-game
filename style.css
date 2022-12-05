@@ -243,6 +243,7 @@ h2 {
   a,
   button {
     font-size: 1.3rem;
+    height: fit-content;
   }
 
   #start-main h1 {
