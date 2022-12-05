@@ -20,6 +20,10 @@ body {
   background-size: cover;
 }
 
+img[alt='Wireframe'] {
+  max-width: 400px;
+}
+
 a,
 button {
   cursor: pointer;
