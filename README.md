@@ -18,6 +18,9 @@ _Mobile friendly_
 ![Initial mobile board](screenshots/initial-mobile.png)
 ![Mobile win screen](screenshots/mobile-win.png)
 
+## Wireframe
+![Wireframe](screenshots/wireframe.jpg)
+
 ## Tech Used
 
 HTML, CSS, Vanilla JavaScript
