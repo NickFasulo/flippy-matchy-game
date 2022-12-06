@@ -6,7 +6,7 @@ Flippy Matchy is a match card game. To win you need to match each pair of identi
 
 Once a level is started, there is a brief moment where all of the cards are revealed - try to remember where the pairs are placed!
 
-There is also a "Tries" counter that keep track of the amount of failed attempts at matching two cards - try to keep this number as low as possible!
+There is also a "Tries" counter that keeps track of the amount of failed attempts at matching two cards - try to keep this number as low as possible!
 
 _Mobile friendly_
 
