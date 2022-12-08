@@ -275,6 +275,7 @@ h2 {
   }
 
   #nice {
+    position: fixed;
     top: 36%;
   }
 
