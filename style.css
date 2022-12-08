@@ -263,8 +263,7 @@ h2 {
 
   .board-header {
     justify-content: space-between;
-    padding-right: 4rem;
-    margin-left: 4rem;
+    margin: 0 4rem;
   }
 
   #board-container {

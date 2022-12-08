@@ -27,6 +27,5 @@ HTML, CSS, Vanilla JavaScript
 
 ## Future Features
 
-- Randomize emojis used for each level
 - Include highest score (lowest amount of tries) for each level played.
-- Add countdown timer.
+- Add countdown timer (user can set having timer on / off).

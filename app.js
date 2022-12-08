@@ -1,56 +1,59 @@
-const hardArray = [
-  '😜',
-  '😜',
-  '🐞',
-  '🐞',
-  '🍩',
-  '🍩',
-  '🤙',
-  '🤙',
-  '☕',
-  '☕',
-  '🍀',
-  '🍀',
-  '🌀',
-  '🌀',
-  '⚓',
-  '⚓',
-  '⚡',
-  '⚡',
-  '⛵',
-  '⛵',
-  '🤖',
-  '🤖',
-  '✌',
-  '✌',
-  '⭐',
-  '⭐',
-  '🔥',
-  '🔥',
-  '🌧',
-  '🌧',
-  '🌴',
-  '🌴',
-  '🌻',
-  '🌻',
-  '😍',
-  '😍',
-  '🍄',
-  '🍄',
-  '🌈',
-  '🌈',
-  '🍔',
-  '🍔',
-  '🍭',
-  '🍭',
-  '😱',
-  '😱',
-  '💰',
-  '💰'
+const pairsArray = [
+  ['😜', '😜'],
+  ['🐞', '🐞'],
+  ['🍩', '🍩'],
+  ['🤙', '🤙'],
+  ['🍀', '🍀'],
+  ['🌀', '🌀'],
+  ['⚡', '⚡'],
+  ['⛵', '⛵'],
+  ['🍭', '🍭'],
+  ['🤖', '🤖'],
+  ['⭐', '⭐'],
+  ['🔥', '🔥'],
+  ['🌧', '🌧'],
+  ['🔱', '🔱'],
+  ['🌴', '🌴'],
+  ['🌻', '🌻'],
+  ['😍', '😍'],
+  ['💣', '💣'],
+  ['☕', '☕'],
+  ['🍄', '🍄'],
+  ['🌈', '🌈'],
+  ['🍔', '🍔'],
+  ['⚓', '⚓'],
+  ['💰', '💰'],
+  ['🐵', '🐵'],
+  ['⏰', '⏰'],
+  ['🌙', '🌙'],
+  ['🐕', '🐕'],
+  ['✌', '✌'],
+  ['🚀', '🚀'],
+  ['❤️', '❤️'],
+  ['😱', '😱'],
+  ['🦴', '🦴']
 ]
 
-const easyArray = hardArray.slice(0, 18)
-const mediumArray = hardArray.slice(0, 32)
+// add highscores to local storage, one for each difficulty level
+
+// push win message down a bit on mobile screens
+
+// Fisher-Yates algorithm
+const shuffle = array => {
+  for (let i = 0; i < array.length; i++) {
+    const j = Math.round(Math.random() * i)
+    const temp = array[i]
+    array[i] = array[j]
+    array[j] = temp
+  }
+  return array
+}
+
+const shuffledPairs = shuffle(pairsArray).flat()
+
+const easyArray = shuffledPairs.slice(0, 18)
+const mediumArray = shuffledPairs.slice(0, 32)
+const hardArray = shuffledPairs.slice(0, 48)
 
 const replay = document.getElementById('replay')
 const newLevel = document.getElementById('new-level')
@@ -63,16 +66,6 @@ const victorySound = document.getElementById('victory-sound')
 
 replay.addEventListener('mouseover', () => buttonSound.play())
 newLevel.addEventListener('mouseover', () => buttonSound.play())
-
-// Fisher-Yates algorithm
-const shuffle = array => {
-  for (let i = 0; i < array.length; i++) {
-    const j = Math.round(Math.random() * i)
-    const temp = array[i]
-    array[i] = array[j]
-    array[j] = temp
-  }
-}
 
 let triesCount = document.getElementById('tries').innerHTML
 const checks = document.getElementsByName('check')
