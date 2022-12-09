@@ -117,7 +117,7 @@ h2 {
 
 .board-header h3 {
   width: 4.5rem;
-  overflow: visible;
+  white-space: nowrap;
 }
 
 #board-container {
