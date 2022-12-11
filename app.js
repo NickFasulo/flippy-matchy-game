@@ -20,12 +20,14 @@ const pairsArray = [
   ['💣', '💣'],
   ['☕', '☕'],
   ['🍄', '🍄'],
+  ['🙌', '🙌'],
   ['🌈', '🌈'],
   ['🍔', '🍔'],
   ['⚓', '⚓'],
   ['💰', '💰'],
   ['🐵', '🐵'],
   ['⏰', '⏰'],
+  ['🍒', '🍒'],
   ['🌙', '🌙'],
   ['🏈', '🏈'],
   ['🐕', '🐕'],
@@ -38,7 +40,9 @@ const pairsArray = [
 
 // add highscores to local storage, one for each difficulty level
 
-// push win message down a bit on mobile screens
+// add selectable categories for card emojis
+
+// add option to keep cards revealed initially (until first click)
 
 // Fisher-Yates algorithm
 const shuffle = array => {
@@ -57,6 +61,20 @@ const easyArray = shuffledPairs.slice(0, 18)
 const mediumArray = shuffledPairs.slice(0, 32)
 const hardArray = shuffledPairs.slice(0, 48)
 
+if (!localStorage.getItem('easyHighScore')) {
+  localStorage.setItem('easyHighScore', 9999)
+}
+if (!localStorage.getItem('mediumHighScore')) {
+  localStorage.setItem('mediumHighScore', 9999)
+}
+if (!localStorage.getItem('hardHighScore')) {
+  localStorage.setItem('hardHighScore', 9999)
+}
+
+const easyHighScore = localStorage.getItem('easyHighScore')
+const mediumHighScore = localStorage.getItem('mediumHighScore')
+const hardHighScore = localStorage.getItem('hardHighScore')
+
 const replay = document.getElementById('replay')
 const newLevel = document.getElementById('new-level')
 
@@ -72,6 +90,7 @@ newLevel.addEventListener('mouseover', () => buttonSound.play())
 let triesCount = document.getElementById('tries').innerHTML
 const checks = document.getElementsByName('check')
 const matchedCards = []
+const revealTime = 1500
 const flipTime = 750
 
 // show cards on page load
@@ -85,8 +104,26 @@ document.addEventListener('DOMContentLoaded', () => {
       checks[i].checked = false
     }
     failSound.play()
-  }, 1500)
+  }, revealTime)
 })
+
+// select array based on what query string is passed in
+const query = parent.document.URL.match(/\?(.*)/g)[0]
+const board = document.getElementById('board')
+let selectedArray
+
+if (query === '?easy') {
+  selectedArray = easyArray
+  board.classList.add('easy')
+}
+if (query === '?medium') {
+  selectedArray = mediumArray
+  board.classList.add('medium')
+}
+if (query === '?hard') {
+  selectedArray = hardArray
+  board.classList.add('hard')
+}
 
 const cardFlip = () => {
   const checkedLength = document.querySelectorAll(
@@ -126,28 +163,25 @@ const cardFlip = () => {
   }
 
   if (matchedCards.length === checks.length) {
+    if (query === '?easy') {
+      if (easyHighScore > triesCount) {
+        localStorage.setItem('easyHighScore', triesCount)
+      }
+    }
+    if (query === '?medium') {
+      if (mediumHighScore > triesCount) {
+        localStorage.setItem('mediumHighScore', triesCount)
+      }
+    }
+    if (query === '?hard') {
+      if (hardHighScore > triesCount) {
+        localStorage.setItem('hardHighScore', triesCount)
+      }
+    }
     document.getElementById('nice').style.display = 'inline'
     document.getElementById('replay').style.display = 'inline'
     victorySound.play()
   }
-}
-
-// select array based on what query string is passed in
-const query = parent.document.URL.match(/\?(.*)/g)[0]
-const board = document.getElementById('board')
-let selectedArray
-
-if (query === '?easy') {
-  selectedArray = easyArray
-  board.classList.add('easy')
-}
-if (query === '?medium') {
-  selectedArray = mediumArray
-  board.classList.add('medium')
-}
-if (query === '?hard') {
-  selectedArray = hardArray
-  board.classList.add('hard')
 }
 
 shuffle(selectedArray)

@@ -29,3 +29,4 @@ HTML, CSS, Vanilla JavaScript
 
 - Include highest score (lowest amount of tries) for each level played.
 - Add countdown timer (user can set having timer on / off).
+- Add selectable categories for emojis used.
