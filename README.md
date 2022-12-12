@@ -8,6 +8,8 @@ Once a level is started, there is a brief moment where all of the cards are reve
 
 There is also a "Tries" counter that keeps track of the amount of failed attempts at matching two cards - try to keep this number as low as possible!
 
+Finally, there is the option to view your high scores (lowest number of tries) for each level in the start screen menu.
+
 _Mobile friendly_
 
 ## Screenshots
