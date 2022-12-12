@@ -38,8 +38,6 @@ const pairsArray = [
   ['🦴', '🦴']
 ]
 
-// add highscores to local storage, one for each difficulty level
-
 // add selectable categories for card emojis (some unlocked w/ lower highscore)
 
 // add option to keep cards revealed initially (until first click)

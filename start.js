@@ -1,12 +1,12 @@
 const hsModal = document.getElementById('hs-modal')
 const hsButton = document.getElementById('hs-button')
-const span = document.getElementsByClassName('close')[0]
+const closeButton = document.getElementById('close')
 
 hsButton.onclick = () => {
   hsModal.style.display = 'block'
 }
 
-span.onclick = () => {
+closeButton.onclick = () => {
   hsModal.style.display = 'none'
 }
 

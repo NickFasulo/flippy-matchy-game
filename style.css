@@ -54,15 +54,15 @@ body {
   margin: 0.75rem 0;
 }
 
-.close {
-  color: lightcoral;
+#close {
+  color: salmon;
   float: right;
   font-size: 1rem;
   text-align: start;
 }
 
-.close:hover,
-.close:focus {
+#close:hover,
+#close:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
