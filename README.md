@@ -27,6 +27,5 @@ HTML, CSS, Vanilla JavaScript
 
 ## Future Features
 
-- Include highest score (lowest amount of tries) for each level played.
 - Add countdown timer (user can set having timer on / off).
-- Add selectable categories for emojis used.
+- Add selectable / unlockable categories for emojis used.

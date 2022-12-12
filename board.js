@@ -40,7 +40,7 @@ const pairsArray = [
 
 // add highscores to local storage, one for each difficulty level
 
-// add selectable categories for card emojis
+// add selectable categories for card emojis (some unlocked w/ lower highscore)
 
 // add option to keep cards revealed initially (until first click)
 
@@ -60,16 +60,6 @@ const shuffledPairs = shuffle(pairsArray).flat()
 const easyArray = shuffledPairs.slice(0, 18)
 const mediumArray = shuffledPairs.slice(0, 32)
 const hardArray = shuffledPairs.slice(0, 48)
-
-if (!localStorage.getItem('easyHighScore')) {
-  localStorage.setItem('easyHighScore', 9999)
-}
-if (!localStorage.getItem('mediumHighScore')) {
-  localStorage.setItem('mediumHighScore', 9999)
-}
-if (!localStorage.getItem('hardHighScore')) {
-  localStorage.setItem('hardHighScore', 9999)
-}
 
 const easyHighScore = localStorage.getItem('easyHighScore')
 const mediumHighScore = localStorage.getItem('mediumHighScore')

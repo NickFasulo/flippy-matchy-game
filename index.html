@@ -5,16 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script defer src="./start.js"></script>
     <title>Flippy Matchy</title>
   </head>
   <body>
     <main id="start-main">
-      <h1>Flippy Matchy</h1>
-      <h2>Select level to start:</h2>
-      <div class="start-buttons">
-        <a href="board.html?easy">Easy</a>
-        <a href="board.html?medium">Medium</a>
-        <a href="board.html?hard">Hard</a>
+      <div class="start-upper-menu">
+        <h1>Flippy Matchy</h1>
+        <h2>Select level to start:</h2>
+        <div class="start-buttons">
+          <a href="board.html?easy">Easy</a>
+          <a href="board.html?medium">Medium</a>
+          <a href="board.html?hard">Hard</a>
+        </div>
+      </div>
+      <div class="start-lower-menu">
+        <button id="hs-button">High Scores</button>
+        <div id="hs-modal" class="modal">
+          <div class="modal-content">
+            <span class="close">X</span>
+            <div class="modal-highscores">
+              <h3>Easy: <span id="easy-hs">---</span></h3>
+              <h3>Medium: <span id="medium-hs">---</span></h3>
+              <h3>Hard: <span id="hard-hs">---</span></h3>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   </body>
