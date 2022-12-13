@@ -1,5 +1,5 @@
 const originalArray = JSON.parse(localStorage.getItem('originalArray'))
-const fruitAndVegArray = JSON.parse(localStorage.getItem('fruitNvegArray'))
+const fruitNvegArray = JSON.parse(localStorage.getItem('fruitNvegArray'))
 const musicArray = JSON.parse(localStorage.getItem('musicArray'))
 const sportArray = JSON.parse(localStorage.getItem('sportArray'))
 const foodArray = JSON.parse(localStorage.getItem('foodArray'))
@@ -26,7 +26,7 @@ const shuffle = array => {
   return array
 }
 
-const shuffledPairs = shuffle(fruitAndVegArray).flat()
+const shuffledPairs = shuffle(originalArray).flat()
 
 const easyArray = shuffledPairs.slice(0, 18)
 const mediumArray = shuffledPairs.slice(0, 32)
