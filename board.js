@@ -1,46 +1,19 @@
-const pairsArray = [
-  ['😜', '😜'],
-  ['🐞', '🐞'],
-  ['🍩', '🍩'],
-  ['🤙', '🤙'],
-  ['🍀', '🍀'],
-  ['🌀', '🌀'],
-  ['🏀', '🏀'],
-  ['⚡', '⚡'],
-  ['⛵', '⛵'],
-  ['🍭', '🍭'],
-  ['🤖', '🤖'],
-  ['⭐', '⭐'],
-  ['🔥', '🔥'],
-  ['🌧', '🌧'],
-  ['🔱', '🔱'],
-  ['🌴', '🌴'],
-  ['🌻', '🌻'],
-  ['😍', '😍'],
-  ['💣', '💣'],
-  ['☕', '☕'],
-  ['🍄', '🍄'],
-  ['🙌', '🙌'],
-  ['🌈', '🌈'],
-  ['🍔', '🍔'],
-  ['⚓', '⚓'],
-  ['💰', '💰'],
-  ['🐵', '🐵'],
-  ['⏰', '⏰'],
-  ['🍒', '🍒'],
-  ['🌙', '🌙'],
-  ['🏈', '🏈'],
-  ['🐕', '🐕'],
-  ['✌', '✌'],
-  ['🚀', '🚀'],
-  ['❤️', '❤️'],
-  ['😱', '😱'],
-  ['🦴', '🦴']
-]
+const originalArray = JSON.parse(localStorage.getItem('originalArray'))
+const fruitAndVegArray = JSON.parse(localStorage.getItem('fruitNvegArray'))
+const musicArray = JSON.parse(localStorage.getItem('musicArray'))
+const sportArray = JSON.parse(localStorage.getItem('sportArray'))
+const foodArray = JSON.parse(localStorage.getItem('foodArray'))
+const animalArray = JSON.parse(localStorage.getItem('animalArray'))
+const spaceArray = JSON.parse(localStorage.getItem('spaceArray'))
 
 // add selectable categories for card emojis (some unlocked w/ lower highscore)
 
 // add option to keep cards revealed initially (until first click)
+
+// add info / about section
+
+// add logic to limit the amount of unflips (flipping card back over before selecting another)
+// possibly increment the number of unflips available when a pair is matched
 
 // Fisher-Yates algorithm
 const shuffle = array => {
@@ -53,7 +26,7 @@ const shuffle = array => {
   return array
 }
 
-const shuffledPairs = shuffle(pairsArray).flat()
+const shuffledPairs = shuffle(fruitAndVegArray).flat()
 
 const easyArray = shuffledPairs.slice(0, 18)
 const mediumArray = shuffledPairs.slice(0, 32)

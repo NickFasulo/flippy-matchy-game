@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script defer src="./start.js"></script>
+    <script defer src="./categories.js"></script>
     <title>Flippy Matchy</title>
   </head>
   <body>
@@ -14,13 +15,13 @@
         <h1>Flippy Matchy</h1>
         <h2>Select level to start:</h2>
         <div class="start-buttons">
-          <a href="board.html?easy">Easy</a>
-          <a href="board.html?medium">Medium</a>
-          <a href="board.html?hard">Hard</a>
+          <a href="board.html?easy" class="menu-button">Easy</a>
+          <a href="board.html?medium" class="menu-button">Medium</a>
+          <a href="board.html?hard" class="menu-button">Hard</a>
         </div>
       </div>
       <div class="start-lower-menu">
-        <button id="hs-button">High Scores</button>
+        <button id="hs-button" class="menu-button">High Scores</button>
         <div id="hs-modal" class="modal">
           <div class="modal-content">
             <span id="close">X</span>
@@ -33,5 +34,6 @@
         </div>
       </div>
     </main>
+    <audio src="./audio/button.mp3" id="button-sound"></audio>
   </body>
 </html>

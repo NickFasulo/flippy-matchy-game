@@ -1,6 +1,19 @@
 const hsModal = document.getElementById('hs-modal')
 const hsButton = document.getElementById('hs-button')
 const closeButton = document.getElementById('close')
+const buttonSound = document.getElementById('button-sound')
+
+const startMenu = document.getElementById('start-main')
+
+// startMenu.addEventListener('mouseover', event => {
+//   const isButton = event.target.nodeName === 'BUTTON'
+//   const isAnchor = event.target.nodeName === 'ANCHOR'
+//   if (!isButton || !isAnchor) {
+//     return
+//   }
+
+//   console.dir(event.target.id)
+// })
 
 hsButton.onclick = () => {
   hsModal.style.display = 'block'
