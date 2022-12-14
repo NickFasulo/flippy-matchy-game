@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <script defer src="./start.js"></script>
-    <script defer src="./categories.js"></script>
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/start.css" />
+    <script defer src="scripts/start.js"></script>
+    <script defer src="scripts/categories.js"></script>
     <title>Flippy Matchy</title>
   </head>
   <body>
@@ -20,16 +21,70 @@
           <a href="board.html?hard" class="menu-button">Hard</a>
         </div>
       </div>
+      <h2 class="break">-----</h2>
       <div class="start-lower-menu">
-        <button id="hs-button" class="menu-button">High Scores</button>
+        <button id="hs-button" class="menu-button">Lowest Tries</button>
         <div id="hs-modal" class="modal">
           <div class="modal-content">
-            <span id="close">X</span>
+            <span id="hs-close">X</span>
             <div class="modal-highscores">
               <h3>Easy: <span id="easy-hs">---</span></h3>
               <h3>Medium: <span id="medium-hs">---</span></h3>
               <h3>Hard: <span id="hard-hs">---</span></h3>
             </div>
+          </div>
+        </div>
+        <button id="cat-button" class="menu-button">Categories</button>
+        <div id="cat-modal" class="modal">
+          <div class="modal-content">
+            <span id="cat-close">X</span>
+            <form id="cat-form">
+              <input
+                type="radio"
+                id="original"
+                name="category"
+                checked
+                value="originalArray"
+              />
+              <label for="original">Original</label><br />
+              <input
+                type="radio"
+                id="fruitNveggies"
+                name="category"
+                value="fruitNvegArray"
+              />
+              <label for="fruitNveggies">Fruit'n'Veggies</label><br />
+              <input
+                type="radio"
+                id="music"
+                name="category"
+                value="musicArray"
+              />
+              <label for="music">Music</label><br />
+              <input
+                type="radio"
+                id="sports"
+                name="category"
+                value="sportArray"
+              />
+              <label for="sports">Sports</label><br />
+              <input type="radio" id="food" name="category" value="foodArray" />
+              <label for="food">Food</label><br />
+              <input
+                type="radio"
+                id="animals"
+                name="category"
+                value="animalArray"
+              />
+              <label for="animals">Animals</label><br />
+              <input
+                type="radio"
+                id="space"
+                name="category"
+                value="spaceArray"
+              />
+              <label for="space">Space</label>
+            </form>
           </div>
         </div>
       </div>

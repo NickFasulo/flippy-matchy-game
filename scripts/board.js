@@ -1,10 +1,5 @@
-const originalArray = JSON.parse(localStorage.getItem('originalArray'))
-const fruitNvegArray = JSON.parse(localStorage.getItem('fruitNvegArray'))
-const musicArray = JSON.parse(localStorage.getItem('musicArray'))
-const sportArray = JSON.parse(localStorage.getItem('sportArray'))
-const foodArray = JSON.parse(localStorage.getItem('foodArray'))
-const animalArray = JSON.parse(localStorage.getItem('animalArray'))
-const spaceArray = JSON.parse(localStorage.getItem('spaceArray'))
+const selectedCatergory = localStorage.getItem('category')
+const arrayCategory = JSON.parse(localStorage.getItem(selectedCatergory))
 
 // add selectable categories for card emojis (some unlocked w/ lower highscore)
 
@@ -15,7 +10,6 @@ const spaceArray = JSON.parse(localStorage.getItem('spaceArray'))
 // add logic to limit the amount of unflips (flipping card back over before selecting another)
 // possibly increment the number of unflips available when a pair is matched
 
-// Fisher-Yates algorithm
 const shuffle = array => {
   for (let i = 0; i < array.length; i++) {
     const j = Math.round(Math.random() * i)
@@ -26,7 +20,7 @@ const shuffle = array => {
   return array
 }
 
-const shuffledPairs = shuffle(originalArray).flat()
+const shuffledPairs = shuffle(arrayCategory).flat()
 
 const easyArray = shuffledPairs.slice(0, 18)
 const mediumArray = shuffledPairs.slice(0, 32)

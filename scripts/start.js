@@ -1,31 +1,51 @@
 const hsModal = document.getElementById('hs-modal')
 const hsButton = document.getElementById('hs-button')
-const closeButton = document.getElementById('close')
+const hsCloseBttn = document.getElementById('hs-close')
+const catModal = document.getElementById('cat-modal')
+const catButton = document.getElementById('cat-button')
+const catCloseBttn = document.getElementById('cat-close')
+const catInputs = document
+  .getElementById('cat-form')
+  .getElementsByTagName('input')
+const startButtons = document.querySelectorAll('button, a')
 const buttonSound = document.getElementById('button-sound')
 
-const startMenu = document.getElementById('start-main')
-
-// startMenu.addEventListener('mouseover', event => {
-//   const isButton = event.target.nodeName === 'BUTTON'
-//   const isAnchor = event.target.nodeName === 'ANCHOR'
-//   if (!isButton || !isAnchor) {
-//     return
-//   }
-
-//   console.dir(event.target.id)
-// })
+for (let i = 0; i < startButtons.length; i++) {
+  startButtons[i].addEventListener('mouseover', () => buttonSound.play())
+}
 
 hsButton.onclick = () => {
   hsModal.style.display = 'block'
 }
 
-closeButton.onclick = () => {
+catButton.onclick = () => {
+  catModal.style.display = 'block'
+}
+
+hsCloseBttn.onclick = () => {
   hsModal.style.display = 'none'
+}
+
+catCloseBttn.onclick = () => {
+  catModal.style.display = 'none'
+  for (let i = 0; i < catInputs.length; i++) {
+    if (catInputs[i].checked) {
+      localStorage.setItem('category', catInputs[i].value)
+    }
+  }
 }
 
 window.onclick = event => {
   if (event.target === hsModal) {
     hsModal.style.display = 'none'
+  }
+  if (event.target === catModal) {
+    for (let i = 0; i < catInputs.length; i++) {
+      if (catInputs[i].checked) {
+        localStorage.setItem('category', catInputs[i].value)
+      }
+    }
+    catModal.style.display = 'none'
   }
 }
 
