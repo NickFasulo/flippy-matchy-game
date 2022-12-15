@@ -1,7 +1,7 @@
 const selectedCatergory = localStorage.getItem('category')
 const arrayCategory = JSON.parse(localStorage.getItem(selectedCatergory))
 
-// add selectable categories for card emojis (some unlocked w/ lower highscore)
+// make some categories not usuable until unlocked w/ completing a level
 
 // add option to keep cards revealed initially (until first click)
 
@@ -45,7 +45,7 @@ newLevel.addEventListener('mouseover', () => buttonSound.play())
 let triesCount = document.getElementById('tries').innerHTML
 const checks = document.getElementsByName('check')
 const matchedCards = []
-const revealTime = 1500
+const revealTime = 2000
 const flipTime = 750
 
 // show cards on page load
@@ -98,6 +98,15 @@ const cardFlip = () => {
     if (!matchedCards.includes(checks[i]) && checks[i].checked) {
       compare.push(checks[i])
     }
+    if (!matchedCards.includes(checks[i]) && !compare.includes(checks[i])) {
+      for (let i = 0; i < checks.length; i++) {
+        checks[i].disabled = false
+      }
+    }
+  }
+
+  if (compare.length === 1) {
+    compare[0].disabled = true
   }
 
   if (compare.length === 2) {
