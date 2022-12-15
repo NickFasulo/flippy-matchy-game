@@ -20,6 +20,12 @@ hsButton.onclick = () => {
 
 catButton.onclick = () => {
   catModal.style.display = 'block'
+  for (let i = 0; i < catInputs.length; i++) {
+    if (catInputs[i].value === localStorage.getItem('category')) {
+      catInputs[i].checked = true
+      console.log(catInputs[i].checked)
+    }
+  }
 }
 
 hsCloseBttn.onclick = () => {
