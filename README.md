@@ -6,9 +6,9 @@ Flippy Matchy is a match card game. To win you need to match each pair of identi
 
 Once a level is started, there is a brief moment where all of the cards are revealed - try to remember where the pairs are placed!
 
-There is also a "Tries" counter that keeps track of the amount of failed attempts at matching two cards - try to keep this number as low as possible!
+There is also a "Tries" counter that keeps track of the amount of failed attempts at matching two cards - try to keep this number as low as possible! There is an option to view your lowest number of tries for each level in the start menu.
 
-Finally, there is the option to view your high scores (lowest number of tries) for each level in the start screen menu.
+Finally, you can switch between emoji categories to play with - pick your favorite!
 
 _Mobile friendly_
 
@@ -29,5 +29,6 @@ HTML, CSS, Vanilla JavaScript
 
 ## Future Features
 
-- Add countdown timer (user can set having timer on / off).
-- Add selectable / unlockable categories for emojis used.
+- Countdown timer (user can set having timer on / off).
+- Limit number of unflips (the ability to flip a card back over before attempting to match with another card). Might include an increase to this amount every time a pair is matched.
+- Add an info modal in the start menu.
