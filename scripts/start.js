@@ -54,6 +54,10 @@ window.onclick = event => {
   }
 }
 
+if (!localStorage.getItem('category')) {
+  localStorage.setItem('category', 'originalArray')
+}
+
 if (!localStorage.getItem('easyHighScore')) {
   localStorage.setItem('easyHighScore', 99999)
 }
