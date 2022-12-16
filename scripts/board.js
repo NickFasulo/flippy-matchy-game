@@ -88,6 +88,14 @@ const cardFlip = () => {
 
   flipSound.play()
 
+  // because of side effect from the if statement on line 113,
+  // re-enable card if not being compared or not already matched
+  for (let i = 0; i < checks.length; i++) {
+    if (!matchedCards.includes(checks[i]) && !compare.includes(checks[i])) {
+      checks[i].disabled = false
+    }
+  }
+
   for (let i = 0; i < checks.length; i++) {
     // prevent from being able to flip over more than 2 cards at once
     if (
@@ -98,13 +106,6 @@ const cardFlip = () => {
     }
     if (!matchedCards.includes(checks[i]) && checks[i].checked) {
       compare.push(checks[i])
-    }
-    // because of side effect from the if statement on line 112,
-    // re-enable card if not being compared or not already matched
-    if (!matchedCards.includes(checks[i]) && !compare.includes(checks[i])) {
-      for (let i = 0; i < checks.length; i++) {
-        checks[i].disabled = false
-      }
     }
   }
 
