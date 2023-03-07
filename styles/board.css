@@ -8,19 +8,23 @@ label {
   justify-content: center;
 }
 
-.placeholder {
-  width: 4.5rem;
-}
-
 .board-main {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
+  height: 100vh;
+}
+
+.board-header-container {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
 }
 
 .board-header {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  width: 40rem;
 }
 
 .board-header h3 {
@@ -156,6 +160,10 @@ label {
 }
 
 @media screen and (max-width: 480px) {
+  .board-main {
+    height: auto;
+  }
+
   .board-header {
     justify-content: space-between;
     margin: 0 4rem;
@@ -172,10 +180,6 @@ label {
   #nice {
     position: fixed;
     top: 36%;
-  }
-
-  .placeholder {
-    display: none;
   }
 
   .card {
