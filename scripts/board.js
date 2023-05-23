@@ -38,11 +38,13 @@ const flipSound = document.getElementById('flip-sound')
 const failSound = document.getElementById('fail-sound')
 const buttonSound = document.getElementById('button-sound')
 const victorySound = document.getElementById('victory-sound')
+const comboSound = document.getElementById('combo-sound')
 
 replay.addEventListener('mouseover', () => buttonSound.play())
 newLevel.addEventListener('mouseover', () => buttonSound.play())
 
 let triesCount = document.getElementById('tries').innerHTML
+let comboCount = document.getElementById('combo').innerHTML
 const checks = document.getElementsByName('check')
 const matchedCards = []
 const revealTime = 2000
@@ -85,6 +87,7 @@ const cardFlip = () => {
     'input[type="checkbox"]:checked'
   ).length
   let compare = []
+  let currentTries = triesCount
 
   flipSound.play()
 
@@ -120,9 +123,22 @@ const cardFlip = () => {
       compare[1].disabled = true
       matchedCards.push(compare[0], compare[1])
       compare = []
+      if (currentTries === triesCount) {
+        comboCount++
+        combo.innerHTML = comboCount
+      }
+      if (comboCount > 1) {
+        comboSound.play()
+        // document.getElementById('combo-message').style.display = 'inline'
+        // setTimeout(() => {
+        //   document.getElementById('combo-message').style.display = 'none'
+        // }, 3000)
+      }
     } else {
       triesCount++
       tries.innerHTML = triesCount
+      comboCount = 0
+      combo.innerHTML = comboCount
       setTimeout(() => {
         compare[0].checked = false
         compare[1].checked = false
@@ -131,22 +147,18 @@ const cardFlip = () => {
     }
   }
 
+  // set high score (lowest # of tries) for current difficulty if win condition is met
   if (matchedCards.length === checks.length) {
-    if (query === '?easy') {
-      if (easyHighScore > triesCount) {
-        localStorage.setItem('easyHighScore', triesCount)
-      }
+    if (query === '?easy' && easyHighScore > triesCount) {
+      localStorage.setItem('easyHighScore', triesCount)
     }
-    if (query === '?medium') {
-      if (mediumHighScore > triesCount) {
-        localStorage.setItem('mediumHighScore', triesCount)
-      }
+    if (query === '?medium' && mediumHighScore > triesCount) {
+      localStorage.setItem('mediumHighScore', triesCount)
     }
-    if (query === '?hard') {
-      if (hardHighScore > triesCount) {
-        localStorage.setItem('hardHighScore', triesCount)
-      }
+    if (query === '?hard' && hardHighScore > triesCount) {
+      localStorage.setItem('hardHighScore', triesCount)
     }
+
     document.getElementById('nice').style.display = 'inline'
     document.getElementById('replay').style.display = 'inline'
     victorySound.play()
@@ -155,6 +167,7 @@ const cardFlip = () => {
 
 shuffle(selectedArray)
 
+// map each card depending on current difficulty and category, and append to dom
 const cardStrings = selectedArray
   .map((emoji, i) => {
     return `<input type="checkbox" id="cardControl${i}" name="check" value="${emoji}" onclick="return cardFlip()"/>
