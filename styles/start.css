@@ -6,6 +6,15 @@
   height: 100vh;
 }
 
+hr {
+  width: 12rem;
+  height: 1px;
+  margin-top: 2.5rem;
+  border: 1px solid black;
+  border-radius: 5rem;
+  background-color: black;
+}
+
 .break {
   margin: 1.25rem 0 0;
 }

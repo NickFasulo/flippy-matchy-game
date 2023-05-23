@@ -129,10 +129,10 @@ const cardFlip = () => {
       }
       if (comboCount > 1) {
         comboSound.play()
-        // document.getElementById('combo-message').style.display = 'inline'
-        // setTimeout(() => {
-        //   document.getElementById('combo-message').style.display = 'none'
-        // }, 3000)
+        document.getElementById('combo-message').style.display = 'inline'
+        setTimeout(() => {
+          document.getElementById('combo-message').style.display = 'none'
+        }, 2000)
       }
     } else {
       triesCount++

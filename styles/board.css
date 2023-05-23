@@ -148,9 +148,10 @@ label {
 }
 
 #combo-message {
-  display: inline;
+  display: none;
   position: fixed;
   top: 10%;
+  width: fit-content;
   background: blanchedalmond;
   border: 4px solid salmon;
   border-radius: 5px;
@@ -161,9 +162,9 @@ label {
   animation-name: growAndShrink;
   -moz-animation-name: growAndShrink;
   -webkit-animation-name: growAndShrink;
-  animation-duration: 3s;
-  -moz-animation-duration: 3s;
-  -webkit-animation-duration: 3s;
+  animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  -webkit-animation-duration: 2s;
   animation-iteration-count: 1;
   -moz-animation-iteration-count: 1;
   -webkit-animation-iteration-count: 1;
@@ -184,20 +185,20 @@ label {
 
 @keyframes growAndShrink {
   0% {
-    transform: scale(1);
+    transform: scale(0.75);
     opacity: 0;
   }
   10% {
     opacity: 1;
   }
   50% {
-    transform: scale(1.5);
+    transform: scale(1);
   }
   90% {
     opacity: 1;
   }
   100% {
-    transform: scale(1);
+    transform: scale(0.75);
     opacity: 0;
   }
 }
