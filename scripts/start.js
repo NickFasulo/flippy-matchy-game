@@ -58,26 +58,50 @@ if (!localStorage.getItem('category')) {
   localStorage.setItem('category', 'originalArray')
 }
 
-if (!localStorage.getItem('easyHighScore')) {
-  localStorage.setItem('easyHighScore', 99999)
+if (!localStorage.getItem('easyLowestTries')) {
+  localStorage.setItem('easyLowestTries', 99999)
 }
-if (!localStorage.getItem('mediumHighScore')) {
-  localStorage.setItem('mediumHighScore', 99999)
+if (!localStorage.getItem('mediumLowestTries')) {
+  localStorage.setItem('mediumLowestTries', 99999)
 }
-if (!localStorage.getItem('hardHighScore')) {
-  localStorage.setItem('hardHighScore', 99999)
+if (!localStorage.getItem('hardLowestTries')) {
+  localStorage.setItem('hardLowestTries', 99999)
 }
 
-const easyHighScore = localStorage.getItem('easyHighScore')
-const mediumHighScore = localStorage.getItem('mediumHighScore')
-const hardHighScore = localStorage.getItem('hardHighScore')
+if (!localStorage.getItem('easyHighestCombo')) {
+  localStorage.setItem('easyHighestCombo', 99999)
+}
+if (!localStorage.getItem('mediumHighestCombo')) {
+  localStorage.setItem('mediumHighestCombo', 99999)
+}
+if (!localStorage.getItem('hardHighestCombo')) {
+  localStorage.setItem('hardHighestCombo', 99999)
+}
 
-if (easyHighScore < 99999) {
-  document.getElementById('easy-hs').innerText = easyHighScore
+const easyLowestTries = localStorage.getItem('easyLowestTries')
+const mediumLowestTries = localStorage.getItem('mediumLowestTries')
+const hardLowestTries = localStorage.getItem('hardLowestTries')
+
+const easyHighestCombo = localStorage.getItem('easyHighestCombo')
+const mediumHighestCombo = localStorage.getItem('mediumHighestCombo')
+const hardHighestCombo = localStorage.getItem('hardHighestCombo')
+
+if (easyLowestTries < 99999) {
+  document.getElementById('easy-hs').innerText = easyLowestTries
 }
-if (mediumHighScore < 99999) {
-  document.getElementById('medium-hs').innerText = mediumHighScore
+if (mediumLowestTries < 99999) {
+  document.getElementById('medium-hs').innerText = mediumLowestTries
 }
-if (hardHighScore < 99999) {
-  document.getElementById('hard-hs').innerText = hardHighScore
+if (hardLowestTries < 99999) {
+  document.getElementById('hard-hs').innerText = hardLowestTries
+}
+
+if (easyHighestCombo < 99999) {
+  document.getElementById('easy-combo').innerText = easyHighestCombo
+}
+if (mediumHighestCombo < 99999) {
+  document.getElementById('medium-combo').innerText = mediumHighestCombo
+}
+if (hardHighestCombo < 99999) {
+  document.getElementById('hard-combo').innerText = hardHighestCombo
 }

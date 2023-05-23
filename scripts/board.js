@@ -26,9 +26,13 @@ const easyArray = shuffledPairs.slice(0, 18)
 const mediumArray = shuffledPairs.slice(0, 32)
 const hardArray = shuffledPairs.slice(0, 48)
 
-const easyHighScore = localStorage.getItem('easyHighScore')
-const mediumHighScore = localStorage.getItem('mediumHighScore')
-const hardHighScore = localStorage.getItem('hardHighScore')
+const easyLowestTries = localStorage.getItem('easyLowestTries')
+const mediumLowestTries = localStorage.getItem('mediumLowestTries')
+const hardLowestTries = localStorage.getItem('hardLowestTries')
+
+const easyHighestCombo = localStorage.getItem('easyHighestCombo')
+const mediumHighestCombo = localStorage.getItem('mediumHighestCombo')
+const hardHighestCombo = localStorage.getItem('hardHighestCombo')
 
 const replay = document.getElementById('replay')
 const newLevel = document.getElementById('new-level')
@@ -45,6 +49,7 @@ newLevel.addEventListener('mouseover', () => buttonSound.play())
 
 let triesCount = document.getElementById('tries').innerHTML
 let comboCount = document.getElementById('combo').innerHTML
+let comboHighScore = 0
 const checks = document.getElementsByName('check')
 const matchedCards = []
 const revealTime = 2000
@@ -126,13 +131,16 @@ const cardFlip = () => {
       if (currentTries === triesCount) {
         comboCount++
         combo.innerHTML = comboCount
+        if (comboHighScore < comboCount) {
+          comboHighScore = comboCount
+        }
       }
       if (comboCount > 1) {
         comboSound.play()
         document.getElementById('combo-message').style.display = 'inline'
         setTimeout(() => {
           document.getElementById('combo-message').style.display = 'none'
-        }, 2000)
+        }, 1000)
       }
     } else {
       triesCount++
@@ -149,14 +157,29 @@ const cardFlip = () => {
 
   // set high score (lowest # of tries) for current difficulty if win condition is met
   if (matchedCards.length === checks.length) {
-    if (query === '?easy' && easyHighScore > triesCount) {
-      localStorage.setItem('easyHighScore', triesCount)
+    if (query === '?easy') {
+      if (easyLowestTries > triesCount) {
+        localStorage.setItem('easyLowestTries', triesCount)
+      }
+      if (easyHighestCombo > comboCount) {
+        localStorage.setItem('easyHighestCombo', comboCount)
+      }
     }
-    if (query === '?medium' && mediumHighScore > triesCount) {
-      localStorage.setItem('mediumHighScore', triesCount)
+    if (query === '?medium' && mediumLowestTries > triesCount) {
+      if (mediumLowestTries > triesCount) {
+        localStorage.setItem('mediumLowestTries', triesCount)
+      }
+      if (mediumHighestCombo > comboCount) {
+        localStorage.setItem('mediumHighestCombo', comboCount)
+      }
     }
-    if (query === '?hard' && hardHighScore > triesCount) {
-      localStorage.setItem('hardHighScore', triesCount)
+    if (query === '?hard' && hardLowestTries > triesCount) {
+      if (hardLowestTries > triesCount) {
+        localStorage.setItem('hardLowestTries', triesCount)
+      }
+      if (hardHighestCombo > comboCount) {
+        localStorage.setItem('hardHighestCombo', comboCount)
+      }
     }
 
     document.getElementById('nice').style.display = 'inline'
