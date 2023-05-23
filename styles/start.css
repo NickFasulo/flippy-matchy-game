@@ -95,20 +95,34 @@ hr {
   padding: 0.75rem;
   margin: auto;
   white-space: nowrap;
-  width: 8rem;
+  width: fit-content;
   height: fit-content;
 }
 
 .modal-highscores {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   height: 100%;
 }
 
 .modal-highscores h3 {
   margin: 0.75rem 0;
+}
+
+.modal-highscores section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-highscores header {
+  text-align: center;
+  font-size: 1.33rem;
+  margin-top: 0.75rem;
+}
+
+section div {
+  margin: 0 1.25rem;
 }
 
 #hs-close,
