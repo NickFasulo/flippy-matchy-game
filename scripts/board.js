@@ -155,11 +155,6 @@ const cardFlip = () => {
     }
   }
 
-  console.log({ currentTries })
-  console.log({ triesCount })
-  console.log({ comboCount })
-  console.log({ comboHighScore })
-
   // set high score (lowest # of tries) for current difficulty if win condition is met
   if (matchedCards.length === checks.length) {
     if (query === '?easy') {
