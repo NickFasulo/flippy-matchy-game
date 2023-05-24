@@ -9,6 +9,7 @@ const catInputs = document
   .getElementsByTagName('input')
 const startButtons = document.querySelectorAll('button, a')
 const buttonSound = document.getElementById('button-sound')
+const radios = document.querySelectorAll('input[type=radio]')
 
 for (let i = 0; i < startButtons.length; i++) {
   startButtons[i].addEventListener('mouseover', () => buttonSound.play())
@@ -104,4 +105,31 @@ if (mediumHighestCombo > 1) {
 }
 if (hardHighestCombo > 1) {
   document.getElementById('hard-combo').innerText = hardHighestCombo
+}
+
+const highestCombo = Math.max(
+  parseInt(easyHighestCombo),
+  parseInt(mediumHighestCombo),
+  parseInt(hardHighestCombo)
+)
+
+for (let i = 1; i < radios.length; i++) {
+  if (i === 1 && easyLowestTries === '99999') {
+    radios[i].setAttribute('disabled', '')
+  }
+  if (i === 2 && mediumLowestTries === '99999') {
+    radios[i].setAttribute('disabled', '')
+  }
+  if (i === 3 && hardLowestTries === '99999') {
+    radios[i].setAttribute('disabled', '')
+  }
+  if (i === 4 && highestCombo < 3) {
+    radios[i].setAttribute('disabled', '')
+  }
+  if (i === 5 && highestCombo < 4) {
+    radios[i].setAttribute('disabled', '')
+  }
+  if (i === 6 && highestCombo < 5) {
+    radios[i].setAttribute('disabled', '')
+  }
 }
