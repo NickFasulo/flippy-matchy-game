@@ -159,16 +159,17 @@ hr {
 }
 
 .unlocks-modal-content section {
-  padding: 0 0.5rem;
   width: 10rem;
 }
 
 .unlocks-modal-content section:nth-child(1) {
   border-right: 1px solid salmon;
+  padding-right: 0.25rem;
 }
 
 .unlocks-modal-content section:nth-child(2) {
   border-left: 1px solid salmon;
+  padding-left: 0.25rem;
 }
 
 #unlocks-modal p {
