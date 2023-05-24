@@ -61,11 +61,11 @@ button:hover {
 }
 
 .float-one {
-  animation: float-one 50s infinite;
+  animation: float-one 45s infinite;
 }
 
 .float-two {
-  animation: float-two 50s infinite;
+  animation: float-two 45s infinite;
 }
 
 .cloud {
