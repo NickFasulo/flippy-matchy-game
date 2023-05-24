@@ -1,15 +1,6 @@
 const selectedCatergory = localStorage.getItem('category')
 const arrayCategory = JSON.parse(localStorage.getItem(selectedCatergory))
 
-// make some categories not usuable until unlocked w/ completing a level
-
-// add option to keep cards revealed initially (until first click)
-
-// add info / about section
-
-// add logic to limit the amount of unflips (flipping card back over before selecting another)
-// possibly increment the number of unflips available when a pair is matched
-
 const shuffle = array => {
   for (let i = 0; i < array.length; i++) {
     const j = Math.round(Math.random() * i)
