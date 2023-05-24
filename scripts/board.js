@@ -140,7 +140,7 @@ const cardFlip = () => {
         document.getElementById('combo-message').style.display = 'inline'
         setTimeout(() => {
           document.getElementById('combo-message').style.display = 'none'
-        }, 1000)
+        }, 1250)
       }
     } else {
       triesCount++
@@ -155,30 +155,35 @@ const cardFlip = () => {
     }
   }
 
+  console.log({ currentTries })
+  console.log({ triesCount })
+  console.log({ comboCount })
+  console.log({ comboHighScore })
+
   // set high score (lowest # of tries) for current difficulty if win condition is met
   if (matchedCards.length === checks.length) {
     if (query === '?easy') {
       if (easyLowestTries > triesCount) {
         localStorage.setItem('easyLowestTries', triesCount)
       }
-      if (easyHighestCombo > comboCount) {
-        localStorage.setItem('easyHighestCombo', comboCount)
+      if (easyHighestCombo < comboHighScore) {
+        localStorage.setItem('easyHighestCombo', comboHighScore)
       }
     }
     if (query === '?medium' && mediumLowestTries > triesCount) {
       if (mediumLowestTries > triesCount) {
         localStorage.setItem('mediumLowestTries', triesCount)
       }
-      if (mediumHighestCombo > comboCount) {
-        localStorage.setItem('mediumHighestCombo', comboCount)
+      if (mediumHighestCombo < comboHighScore) {
+        localStorage.setItem('mediumHighestCombo', comboHighScore)
       }
     }
     if (query === '?hard' && hardLowestTries > triesCount) {
       if (hardLowestTries > triesCount) {
         localStorage.setItem('hardLowestTries', triesCount)
       }
-      if (hardHighestCombo > comboCount) {
-        localStorage.setItem('hardHighestCombo', comboCount)
+      if (hardHighestCombo < comboHighScore) {
+        localStorage.setItem('hardHighestCombo', comboHighScore)
       }
     }
 

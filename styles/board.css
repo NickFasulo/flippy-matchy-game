@@ -162,9 +162,9 @@ label {
   animation-name: growAndShrink;
   -moz-animation-name: growAndShrink;
   -webkit-animation-name: growAndShrink;
-  animation-duration: 1s;
-  -moz-animation-duration: 1s;
-  -webkit-animation-duration: 1s;
+  animation-duration: 1.25s;
+  -moz-animation-duration: 1.25s;
+  -webkit-animation-duration: 1.25s;
   animation-iteration-count: 1;
   -moz-animation-iteration-count: 1;
   -webkit-animation-iteration-count: 1;

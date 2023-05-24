@@ -69,13 +69,13 @@ if (!localStorage.getItem('hardLowestTries')) {
 }
 
 if (!localStorage.getItem('easyHighestCombo')) {
-  localStorage.setItem('easyHighestCombo', 99999)
+  localStorage.setItem('easyHighestCombo', 1)
 }
 if (!localStorage.getItem('mediumHighestCombo')) {
-  localStorage.setItem('mediumHighestCombo', 99999)
+  localStorage.setItem('mediumHighestCombo', 1)
 }
 if (!localStorage.getItem('hardHighestCombo')) {
-  localStorage.setItem('hardHighestCombo', 99999)
+  localStorage.setItem('hardHighestCombo', 1)
 }
 
 const easyLowestTries = localStorage.getItem('easyLowestTries')
@@ -96,12 +96,12 @@ if (hardLowestTries < 99999) {
   document.getElementById('hard-hs').innerText = hardLowestTries
 }
 
-if (easyHighestCombo < 99999) {
+if (easyHighestCombo > 1) {
   document.getElementById('easy-combo').innerText = easyHighestCombo
 }
-if (mediumHighestCombo < 99999) {
+if (mediumHighestCombo > 1) {
   document.getElementById('medium-combo').innerText = mediumHighestCombo
 }
-if (hardHighestCombo < 99999) {
+if (hardHighestCombo > 1) {
   document.getElementById('hard-combo').innerText = hardHighestCombo
 }
