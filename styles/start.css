@@ -9,7 +9,7 @@
 hr {
   width: 12rem;
   height: 1px;
-  margin-top: 2.5rem;
+  margin: 2rem 0;
   border: 1px solid black;
   border-radius: 5rem;
   background-color: black;
@@ -63,8 +63,8 @@ hr {
 .start-lower-menu {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  height: 8rem;
+  justify-content: space-between;
+  height: 7rem;
 }
 
 .start-lower-menu h2 {
@@ -80,7 +80,7 @@ hr {
   position: fixed;
   z-index: 5;
   left: 0;
-  top: 36%;
+  top: 30%;
   width: 100%;
   height: 100%;
   overflow: auto;
@@ -120,20 +120,21 @@ hr {
   margin: 0.75rem 0 0.25rem;
 }
 
-section div {
+.modal-highscores section div {
   margin: 0 1.25rem;
 }
 
-section:nth-child(1) {
+.modal-highscores section:nth-child(1) {
   border-right: 1px solid salmon;
 }
 
-section:nth-child(2) {
+.modal-highscores section:nth-child(2) {
   border-left: 1px solid salmon;
 }
 
 #hs-close,
-#cat-close {
+#cat-close,
+#unlocks-close {
   position: absolute;
   top: 5px;
   right: 10px;
@@ -144,10 +145,49 @@ section:nth-child(2) {
 
 #hs-close:hover,
 #cat-close:hover,
+#unlocks-close:hover,
 #hs-close:focus,
-#cat-close:focus {
+#cat-close:focus,
+#unlocks-close:focus {
   color: black;
   cursor: pointer;
+}
+
+.unlocks-modal-content {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+.unlocks-modal-content section {
+  padding: 0 0.5rem;
+  width: 10rem;
+}
+
+.unlocks-modal-content section:nth-child(1) {
+  border-right: 1px solid salmon;
+}
+
+.unlocks-modal-content section:nth-child(2) {
+  border-left: 1px solid salmon;
+}
+
+#unlocks-modal p {
+  margin: 0 0 1rem;
+  text-align: center;
+}
+
+#unlocks-modal p:nth-child(6) {
+  margin-bottom: 0;
+}
+
+#unlocks-modal h2 {
+  margin: 0 0 0.5rem;
+  text-align: center;
+}
+
+#unlocks-modal h3 {
+  margin: 0 1rem;
+  text-align: center;
 }
 
 form input {

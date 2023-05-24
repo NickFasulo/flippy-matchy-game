@@ -7,6 +7,9 @@ const catCloseBttn = document.getElementById('cat-close')
 const catInputs = document
   .getElementById('cat-form')
   .getElementsByTagName('input')
+const unlocksModal = document.getElementById('unlocks-modal')
+const unlocksButton = document.getElementById('unlocks-button')
+const unlocksCloseBttn = document.getElementById('unlocks-close')
 const startButtons = document.querySelectorAll('button, a')
 const buttonSound = document.getElementById('button-sound')
 const radios = document.querySelectorAll('input[type=radio]')
@@ -29,6 +32,10 @@ catButton.onclick = () => {
   }
 }
 
+unlocksButton.onclick = () => {
+  unlocksModal.style.display = 'block'
+}
+
 hsCloseBttn.onclick = () => {
   hsModal.style.display = 'none'
 }
@@ -42,6 +49,10 @@ catCloseBttn.onclick = () => {
   }
 }
 
+unlocksCloseBttn.onclick = () => {
+  unlocksModal.style.display = 'none'
+}
+
 window.onclick = event => {
   if (event.target === hsModal) {
     hsModal.style.display = 'none'
@@ -53,6 +64,9 @@ window.onclick = event => {
       }
     }
     catModal.style.display = 'none'
+  }
+  if (event.target === unlocksModal) {
+    hsModal.style.display = 'none'
   }
 }
 
