@@ -96,7 +96,6 @@ hr {
   margin: auto;
   white-space: nowrap;
   width: fit-content;
-  height: fit-content;
 }
 
 .modal-highscores {
@@ -118,11 +117,19 @@ hr {
 .modal-highscores header {
   text-align: center;
   font-size: 1.33rem;
-  margin-top: 0.75rem;
+  margin: 0.75rem 0 0.25rem;
 }
 
 section div {
   margin: 0 1.25rem;
+}
+
+section:nth-child(1) {
+  border-right: 1px solid salmon;
+}
+
+section:nth-child(2) {
+  border-left: 1px solid salmon;
 }
 
 #hs-close,
@@ -151,6 +158,11 @@ form input {
 
 form label {
   cursor: pointer;
+  font-size: larger;
+}
+
+form input {
+  margin: 0.75rem 5px;
 }
 
 @media screen and (max-width: 480px) {
