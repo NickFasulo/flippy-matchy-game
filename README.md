@@ -8,7 +8,9 @@ Once a level is started, there is a brief moment where all of the cards are reve
 
 There is also a "Tries" counter that keeps track of the amount of failed attempts at matching two cards - try to keep this number as low as possible! There is an option to view your lowest number of tries for each level in the start menu.
 
-Finally, you can switch between emoji categories to play with - pick your favorite!
+Now introducing Combos! Match two or more pairs in a row and get a combo - what's the highest you can get? 
+
+Finally, you can switch between emoji categories to play with - pick your favorite! Most categories are now locked until achieving certain milestones in game.
 
 _Mobile friendly_
 
