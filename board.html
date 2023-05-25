@@ -6,9 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/global.css" />
     <link rel="stylesheet" href="styles/board.css" />
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon/favicon-16x16.png"
+    />
     <link rel="manifest" href="favicon/site.webmanifest" />
     <script defer src="scripts/board.js"></script>
     <title>Flippy Matchy</title>
@@ -17,12 +31,16 @@
     <main class="board-main">
       <div class="board-header-container">
         <div class="board-header">
+          <img src="svg/speaker-icon.svg" id="speaker" alt="mute music" />
+          <img src="svg/mute-icon.svg" id="mute" alt="play music" />
           <h2>Flippy Matchy</h2>
           <h3>Tries: <span id="tries">0</span></h3>
         </div>
       </div>
       <div id="board-container">
-        <h3 id="combo-message">Combo ✖️ <span id="combo">0</span>&nbsp;&nbsp;💥</h3>
+        <h3 id="combo-message">
+          Combo ✖️ <span id="combo">0</span>&nbsp;&nbsp;💥
+        </h3>
         <div id="board"><h1 id="nice">Nice! &nbsp;🎉</h1></div>
         <div class="board-buttons">
           <button id="new-level" onclick="location.href='index.html'">
@@ -39,6 +57,7 @@
     <audio src="./audio/flip.mp3" id="flip-sound"></audio>
     <audio src="./audio/fail.mp3" id="fail-sound"></audio>
     <audio src="./audio/combo.mp3" id="combo-sound"></audio>
+    <audio src="./audio/music.mp3" id="music" loop></audio>
     <div class="cloud float-one" id="cloud-one"></div>
     <div class="cloud float-one" id="cloud-two"></div>
     <div class="cloud float-two" id="cloud-three"></div>

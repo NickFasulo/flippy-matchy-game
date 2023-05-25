@@ -74,6 +74,10 @@ if (!localStorage.getItem('category')) {
   localStorage.setItem('category', 'originalArray')
 }
 
+if (!localStorage.getItem('playMusic')) {
+  localStorage.setItem('playMusic', true)
+}
+
 if (!localStorage.getItem('easyLowestTries')) {
   localStorage.setItem('easyLowestTries', 99999)
 }

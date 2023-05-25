@@ -16,6 +16,12 @@ label {
   overflow-x: hidden;
 }
 
+#mute,
+#speaker {
+  width: 1.5rem;
+  cursor: pointer;
+}
+
 .board-header-container {
   display: flex;
   justify-content: center;
@@ -26,6 +32,10 @@ label {
   display: flex;
   justify-content: space-between;
   width: 40rem;
+}
+
+.board-header h2 {
+  margin-left: 3.5rem;
 }
 
 .board-header h3 {
@@ -214,7 +224,15 @@ label {
 
   .board-header {
     justify-content: space-between;
-    margin: 0 4rem;
+    margin: 0 1.5rem;
+  }
+
+  .board-header h3 {
+    width: 4rem;
+  }
+
+  .board-header h2 {
+    margin-left: 2rem;
   }
 
   #board-container {

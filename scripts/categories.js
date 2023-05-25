@@ -134,7 +134,6 @@ localStorage.setItem(
   ])
 )
 
-// unlocked after completeing easy
 localStorage.setItem(
   'foodArray',
   JSON.stringify([
@@ -165,7 +164,6 @@ localStorage.setItem(
   ])
 )
 
-// unlocked after completeing medium
 localStorage.setItem(
   'animalArray',
   JSON.stringify([
@@ -196,7 +194,6 @@ localStorage.setItem(
   ])
 )
 
-// unlocked after completeing hard
 localStorage.setItem(
   'spaceArray',
   JSON.stringify([

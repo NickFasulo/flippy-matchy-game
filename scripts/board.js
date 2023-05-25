@@ -25,6 +25,8 @@ const easyHighestCombo = localStorage.getItem('easyHighestCombo')
 const mediumHighestCombo = localStorage.getItem('mediumHighestCombo')
 const hardHighestCombo = localStorage.getItem('hardHighestCombo')
 
+const playMusic = localStorage.getItem('playMusic')
+
 const replay = document.getElementById('replay')
 const newLevel = document.getElementById('new-level')
 
@@ -34,6 +36,28 @@ const failSound = document.getElementById('fail-sound')
 const buttonSound = document.getElementById('button-sound')
 const victorySound = document.getElementById('victory-sound')
 const comboSound = document.getElementById('combo-sound')
+const music = document.getElementById('music')
+
+const speaker = document.getElementById('speaker')
+const mute = document.getElementById('mute')
+
+playMusic === 'true'
+  ? (music.play(), (mute.style.display = 'none'))
+  : (music.pause(), (speaker.style.display = 'none'))
+
+speaker.onclick = () => {
+  music.pause()
+  speaker.style.display = 'none'
+  mute.style.display = 'initial'
+  localStorage.setItem('playMusic', false)
+}
+
+mute.onclick = () => {
+  music.play()
+  mute.style.display = 'none'
+  speaker.style.display = 'initial'
+  localStorage.setItem('playMusic', true)
+}
 
 replay.addEventListener('mouseover', () => buttonSound.play())
 newLevel.addEventListener('mouseover', () => buttonSound.play())
