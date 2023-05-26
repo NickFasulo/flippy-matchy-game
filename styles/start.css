@@ -25,6 +25,10 @@ hr {
   text-shadow: 1px 0 1px white;
   margin: 1rem 0;
   font-size: 4rem;
+  cursor: pointer;
+}
+
+.flip-animation {
   animation-name: flip;
   -moz-animation-name: flip;
   animation-duration: 1s;

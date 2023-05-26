@@ -12,11 +12,24 @@ const unlocksButton = document.getElementById('unlocks-button')
 const unlocksCloseBttn = document.getElementById('unlocks-close')
 const startButtons = document.querySelectorAll('button, a')
 const buttonSound = document.getElementById('button-sound')
+const flippyMatchy = document.getElementById('flippy-matchy')
 const radios = document.querySelectorAll('input[type=radio]')
 const labels = document.getElementsByTagName('label')
+const flipSound = document.getElementById('flip-sound')
+const failSound = document.getElementById('fail-sound')
 
 for (let i = 0; i < startButtons.length; i++) {
   startButtons[i].addEventListener('mouseover', () => buttonSound.play())
+}
+
+flippyMatchy.onclick = () => {
+  flippyMatchy.classList.remove('flip-animation')
+  void flippyMatchy.offsetWidth
+  flippyMatchy.classList.add('flip-animation')
+  flipSound.play()
+  setTimeout(() => {
+    failSound.play()
+  }, 500)
 }
 
 hsButton.onclick = () => {

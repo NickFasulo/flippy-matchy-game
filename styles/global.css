@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&family=Nerko+One&family=Roboto&display=swap');
 
-html {
+html,
+body {
   overflow-x: hidden;
 }
 
@@ -22,7 +23,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  overflow-x: hidden;
+  position: relative;
 }
 
 a,
