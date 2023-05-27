@@ -38,6 +38,8 @@ const victorySound = document.getElementById('victory-sound')
 const comboSound = document.getElementById('combo-sound')
 const music = document.getElementById('music')
 
+music.volume = 0.1
+
 const speaker = document.getElementById('speaker')
 const mute = document.getElementById('mute')
 
