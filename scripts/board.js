@@ -26,6 +26,7 @@ const mediumHighestCombo = localStorage.getItem('mediumHighestCombo')
 const hardHighestCombo = localStorage.getItem('hardHighestCombo')
 
 const playMusic = localStorage.getItem('playMusic')
+const musicVolume = localStorage.getItem('musicVolume')
 
 const replay = document.getElementById('replay')
 const newLevel = document.getElementById('new-level')
@@ -38,10 +39,10 @@ const victorySound = document.getElementById('victory-sound')
 const comboSound = document.getElementById('combo-sound')
 const music = document.getElementById('music')
 
-music.volume = 0.2
-
 const speaker = document.getElementById('speaker')
 const mute = document.getElementById('mute')
+
+music.volume = musicVolume
 
 playMusic === 'true'
   ? (music.play(), (mute.style.display = 'none'))
@@ -172,7 +173,7 @@ const cardFlip = () => {
     }
   }
 
-  // set high score (lowest # of tries) for current difficulty if win condition is met
+  // set high scores (lowest # of tries and highest combo) for current difficulty if win condition is met
   if (matchedCards.length === checks.length) {
     if (query === '?easy') {
       if (easyLowestTries > triesCount) {

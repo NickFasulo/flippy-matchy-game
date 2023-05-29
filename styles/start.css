@@ -69,7 +69,7 @@ hr {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 7rem;
+  height: 8.5rem;
 }
 
 .start-lower-menu h2 {
@@ -139,7 +139,8 @@ hr {
 
 #hs-close,
 #cat-close,
-#unlocks-close {
+#unlocks-close,
+#settings-close {
   position: absolute;
   top: 5px;
   right: 10px;
@@ -151,9 +152,11 @@ hr {
 #hs-close:hover,
 #cat-close:hover,
 #unlocks-close:hover,
+#settings-close:hover,
 #hs-close:focus,
 #cat-close:focus,
-#unlocks-close:focus {
+#unlocks-close:focus,
+#settings-close:focus {
   color: black;
   cursor: pointer;
 }
@@ -194,6 +197,14 @@ hr {
 #unlocks-modal h3 {
   margin: 0 1rem;
   text-align: center;
+}
+
+#settings-modal h3 {
+  margin: 0.5rem 0;
+}
+
+#music-vol-control {
+  cursor: pointer;
 }
 
 form input {

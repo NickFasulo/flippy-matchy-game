@@ -10,6 +10,9 @@ const catInputs = document
 const unlocksModal = document.getElementById('unlocks-modal')
 const unlocksButton = document.getElementById('unlocks-button')
 const unlocksCloseBttn = document.getElementById('unlocks-close')
+const settingsModal = document.getElementById('settings-modal')
+const settingsButton = document.getElementById('settings-button')
+const settingsCloseBttn = document.getElementById('settings-close')
 const startButtons = document.querySelectorAll('button, a')
 const buttonSound = document.getElementById('button-sound')
 const flippyMatchy = document.getElementById('flippy-matchy')
@@ -17,6 +20,7 @@ const radios = document.querySelectorAll('input[type=radio]')
 const labels = document.getElementsByTagName('label')
 const flipSound = document.getElementById('flip-sound')
 const failSound = document.getElementById('fail-sound')
+const musicVolControl = document.getElementById('music-vol-control')
 
 for (let i = 0; i < startButtons.length; i++) {
   startButtons[i].addEventListener('mouseover', () => buttonSound.play())
@@ -49,6 +53,10 @@ unlocksButton.onclick = () => {
   unlocksModal.style.display = 'block'
 }
 
+settingsButton.onclick = () => {
+  settingsModal.style.display = 'block'
+}
+
 hsCloseBttn.onclick = () => {
   hsModal.style.display = 'none'
 }
@@ -66,6 +74,10 @@ unlocksCloseBttn.onclick = () => {
   unlocksModal.style.display = 'none'
 }
 
+settingsCloseBttn.onclick = () => {
+  settingsModal.style.display = 'none'
+}
+
 window.onclick = event => {
   if (event.target === hsModal) {
     hsModal.style.display = 'none'
@@ -79,16 +91,27 @@ window.onclick = event => {
     catModal.style.display = 'none'
   }
   if (event.target === unlocksModal) {
-    hsModal.style.display = 'none'
+    unlocksModal.style.display = 'none'
   }
-}
-
-if (!localStorage.getItem('category')) {
-  localStorage.setItem('category', 'originalArray')
+  if (event.target === settingsModal) {
+    settingsModal.style.display = 'none'
+  }
 }
 
 if (!localStorage.getItem('playMusic')) {
   localStorage.setItem('playMusic', true)
+}
+if (!localStorage.getItem('musicVolume')) {
+  localStorage.setItem('musicVolume', 0.5)
+}
+
+musicVolControl.addEventListener('input', function (e) {
+  localStorage.setItem('musicVolume', e.currentTarget.value)
+})
+musicVolControl.value = localStorage.getItem('musicVolume')
+
+if (!localStorage.getItem('category')) {
+  localStorage.setItem('category', 'originalArray')
 }
 
 if (!localStorage.getItem('easyLowestTries')) {

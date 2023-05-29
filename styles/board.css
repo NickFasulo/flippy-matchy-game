@@ -170,9 +170,9 @@ label {
   z-index: 10;
   margin: 0 auto;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  animation-name: growAndShrink;
-  -moz-animation-name: growAndShrink;
-  -webkit-animation-name: growAndShrink;
+  animation-name: grow;
+  -moz-animation-name: grow;
+  -webkit-animation-name: grow;
   animation-duration: 1.25s;
   -moz-animation-duration: 1.25s;
   -webkit-animation-duration: 1.25s;
@@ -194,7 +194,7 @@ label {
   }
 }
 
-@keyframes growAndShrink {
+@keyframes grow {
   0% {
     transform: scale(0.75);
     opacity: 0;
