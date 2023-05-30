@@ -25,12 +25,5 @@ _Mobile friendly_
 ## Wireframe
 ![Wireframe](screenshots/wireframe.jpg)
 
-## Tech Used
+_Written with HTML, CSS, Vanilla JavaScript_
 
-HTML, CSS, Vanilla JavaScript
-
-## Future Features
-
-- Countdown timer (user can set having timer on / off).
-- Limit number of unflips (the ability to flip a card back over before attempting to match with another card). Might include an increase to this amount every time a pair is matched.
-- Add an info modal in the start menu.
