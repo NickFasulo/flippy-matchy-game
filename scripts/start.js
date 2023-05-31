@@ -99,10 +99,12 @@ window.onclick = event => {
   }
 }
 
+if (!localStorage.getItem('keepRevealed')) {
+  localStorage.setItem('keepRevealed', false)
+}
 setRevealed.onclick = () => {
   localStorage.setItem('keepRevealed', setRevealed.checked ? true : false)
 }
-
 if (localStorage.getItem('keepRevealed') === 'true') {
   setRevealed.checked = true
 }
