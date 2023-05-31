@@ -25,6 +25,8 @@ const easyHighestCombo = localStorage.getItem('easyHighestCombo')
 const mediumHighestCombo = localStorage.getItem('mediumHighestCombo')
 const hardHighestCombo = localStorage.getItem('hardHighestCombo')
 
+const keepRevealed = localStorage.getItem('keepRevealed')
+
 const playMusic = localStorage.getItem('playMusic')
 const musicVolume = localStorage.getItem('musicVolume')
 
@@ -79,12 +81,14 @@ document.addEventListener('DOMContentLoaded', () => {
     checks[i].checked = true
   }
 
-  setTimeout(() => {
-    for (let i = 0; i < checks.length; i++) {
-      checks[i].checked = false
-    }
-    failSound.play()
-  }, revealTime)
+  if (keepRevealed === 'false') {
+    setTimeout(() => {
+      for (let i = 0; i < checks.length; i++) {
+        checks[i].checked = false
+      }
+      failSound.play()
+    }, revealTime)
+  }
 })
 
 // select array based on what query string is passed in

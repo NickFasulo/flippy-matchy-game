@@ -21,6 +21,7 @@ const labels = document.getElementsByTagName('label')
 const flipSound = document.getElementById('flip-sound')
 const failSound = document.getElementById('fail-sound')
 const musicVolControl = document.getElementById('music-vol-control')
+const setRevealed = document.getElementById('set-revealed')
 
 for (let i = 0; i < startButtons.length; i++) {
   startButtons[i].addEventListener('mouseover', () => buttonSound.play())
@@ -96,6 +97,14 @@ window.onclick = event => {
   if (event.target === settingsModal) {
     settingsModal.style.display = 'none'
   }
+}
+
+setRevealed.onclick = () => {
+  localStorage.setItem('keepRevealed', setRevealed.checked ? true : false)
+}
+
+if (localStorage.getItem('keepRevealed') === 'true') {
+  setRevealed.checked = true
 }
 
 if (!localStorage.getItem('playMusic')) {
