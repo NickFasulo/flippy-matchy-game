@@ -33,15 +33,22 @@
         <div class="board-header">
           <img src="svg/speaker-icon.svg" id="speaker" alt="mute music" />
           <img src="svg/mute-icon.svg" id="mute" alt="play music" />
-          <h2>Flippy Matchy</h2>
+          <!-- <h2 id="board-title">Flippy Matchy</h2> -->
+          <h2 id="time">5:00</h2>
           <h3>Tries: <span id="tries">0</span></h3>
         </div>
       </div>
       <div id="board-container">
-        <h3 id="combo-message">
+        <h3 id="combo-message" class="grow-animation">
           Combo ✖️ <span id="combo">0</span>&nbsp;&nbsp;💥
         </h3>
-        <div id="board"><h1 id="nice">Nice! &nbsp;🎉</h1></div>
+        <div id="board">
+          <h1 id="nice" class="bounce-animation">Nice! &nbsp;🎉</h1>
+          <div id="out-of-time" class="bounce-animation">
+            <h2>Out of<br />Time! &nbsp;</h2>
+            <h2>⏰</h2>
+          </div>
+        </div>
         <div class="board-buttons">
           <button id="new-level" onclick="location.href='index.html'">
             New Level

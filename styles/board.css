@@ -130,7 +130,8 @@ label {
   text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
 }
 
-#nice {
+#nice,
+#out-of-time {
   display: none;
   position: absolute;
   background: blanchedalmond;
@@ -141,6 +142,32 @@ label {
   top: 45%;
   margin: 0 auto;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+#out-of-time {
+  align-items: center;
+  justify-content: center;
+}
+
+#out-of-time h2 {
+  margin: 0;
+}
+
+#combo-message {
+  display: none;
+  position: fixed;
+  top: 10%;
+  width: fit-content;
+  background: blanchedalmond;
+  border: 4px solid salmon;
+  border-radius: 5px;
+  padding: 1rem;
+  z-index: 10;
+  margin: 0 auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.bounce-animation {
   animation-name: bounce;
   -moz-animation-name: bounce;
   -webkit-animation-name: bounce;
@@ -158,18 +185,7 @@ label {
   -webkit-animation-iteration-count: infinite;
 }
 
-#combo-message {
-  display: none;
-  position: fixed;
-  top: 10%;
-  width: fit-content;
-  background: blanchedalmond;
-  border: 4px solid salmon;
-  border-radius: 5px;
-  padding: 1rem;
-  z-index: 10;
-  margin: 0 auto;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+.grow-animation {
   animation-name: grow;
   -moz-animation-name: grow;
   -webkit-animation-name: grow;
@@ -243,7 +259,8 @@ label {
     margin: 0 1rem;
   }
 
-  #nice {
+  #nice,
+  #out-of-time {
     position: fixed;
     top: 40%;
   }
