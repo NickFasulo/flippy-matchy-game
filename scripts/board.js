@@ -21,6 +21,7 @@ const failSound = document.getElementById('fail-sound')
 const buttonSound = document.getElementById('button-sound')
 const victorySound = document.getElementById('victory-sound')
 const comboSound = document.getElementById('combo-sound')
+const gameOverSound = document.getElementById('game-over-sound')
 const music = document.getElementById('music')
 
 const speaker = document.getElementById('speaker')
@@ -91,7 +92,8 @@ const startTimer = (duration, display) => {
   let timer = duration,
     minutes,
     seconds
-  setInterval(() => {
+
+  const timerInterval = setInterval(() => {
     minutes = parseInt(timer / 60, 10)
     seconds = parseInt(timer % 60, 10)
 
@@ -102,7 +104,7 @@ const startTimer = (duration, display) => {
 
     // stop timer if win condition is met
     if (matchedCards.length === checks.length) {
-      return clearInterval(timer)
+      return clearInterval(timerInterval)
     }
 
     // if timer reaches 0, end the game
@@ -115,11 +117,13 @@ const startTimer = (duration, display) => {
 
       document.getElementById('out-of-time').style.display = 'flex'
       document.getElementById('replay').style.display = 'inline'
+      gameOverSound.play()
+      return clearInterval(timerInterval)
     }
   }, 1000)
-}
 
-display = document.getElementById('time')
+  timerInterval()
+}
 
 // show cards on page load
 document.addEventListener('DOMContentLoaded', () => {
@@ -137,9 +141,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (addTimer === 'true') {
-    let minutes = 60 * timeLength
-    let display = document.getElementById('time')
-    startTimer(minutes, display)
+    const minutes = 60 * timeLength
+    startTimer(minutes, timeHeader)
   }
 })
 
