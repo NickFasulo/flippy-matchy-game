@@ -203,6 +203,14 @@ hr {
   margin: 0.5rem 0;
 }
 
+#settings-modal h3 input:nth-child(1) {
+  margin-left: 0.75rem
+}
+
+#settings-modal h3 input:nth-child(2) {
+  margin-left: 3.5rem
+}
+
 #set-revealed {
   margin-left: 1rem;
   cursor: pointer;

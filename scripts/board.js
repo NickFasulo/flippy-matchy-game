@@ -1,89 +1,3 @@
-const selectedCatergory = localStorage.getItem('category')
-const arrayCategory = JSON.parse(localStorage.getItem(selectedCatergory))
-
-// show cards on page load
-document.addEventListener('DOMContentLoaded', () => {
-  for (let i = 0; i < checks.length; i++) {
-    checks[i].checked = true
-  }
-
-  if (keepRevealed === 'false') {
-    setTimeout(() => {
-      for (let i = 0; i < checks.length; i++) {
-        checks[i].checked = false
-      }
-      failSound.play()
-    }, revealTime)
-  }
-
-  let fiveMinutes = 60 * 0.1
-  let display = document.getElementById('time')
-  startTimer(fiveMinutes, display)
-})
-
-const shuffle = array => {
-  for (let i = 0; i < array.length; i++) {
-    const j = Math.round(Math.random() * i)
-    const temp = array[i]
-    array[i] = array[j]
-    array[j] = temp
-  }
-  return array
-}
-
-const startTimer = (duration, display) => {
-  let timer = duration,
-    minutes,
-    seconds
-  setInterval(() => {
-    minutes = parseInt(timer / 60, 10)
-    seconds = parseInt(timer % 60, 10)
-
-    minutes = minutes < 10 ? minutes : minutes
-    seconds = seconds < 10 ? '0' + seconds : seconds
-
-    display.textContent = minutes + ':' + seconds
-
-    // if timer reaches 0, end the game
-    if (--timer < 0) {
-      timer = 0
-
-      for (let i = 0; i < checks.length; i++) {
-        checks[i].disabled = true
-      }
-
-      document.getElementById('out-of-time').style.display = 'flex'
-      document.getElementById('replay').style.display = 'inline'
-    }
-  }, 1000)
-}
-
-display = document.getElementById('time')
-
-const shuffledPairs = shuffle(arrayCategory).flat()
-
-const easyArray = shuffledPairs.slice(0, 18)
-const mediumArray = shuffledPairs.slice(0, 32)
-const hardArray = shuffledPairs.slice(0, 48)
-
-// select array based on what query string is passed in
-const query = parent.document.URL.match(/\?(.*)/g)[0]
-const board = document.getElementById('board')
-let selectedArray
-
-if (query === '?easy') {
-  selectedArray = easyArray
-  board.classList.add('easy')
-}
-if (query === '?medium') {
-  selectedArray = mediumArray
-  board.classList.add('medium')
-}
-if (query === '?hard') {
-  selectedArray = hardArray
-  board.classList.add('hard')
-}
-
 const easyLowestTries = localStorage.getItem('easyLowestTries')
 const mediumLowestTries = localStorage.getItem('mediumLowestTries')
 const hardLowestTries = localStorage.getItem('hardLowestTries')
@@ -93,6 +7,7 @@ const mediumHighestCombo = localStorage.getItem('mediumHighestCombo')
 const hardHighestCombo = localStorage.getItem('hardHighestCombo')
 
 const keepRevealed = localStorage.getItem('keepRevealed')
+const addTimer = localStorage.getItem('addTimer')
 
 const playMusic = localStorage.getItem('playMusic')
 const musicVolume = localStorage.getItem('musicVolume')
@@ -110,6 +25,123 @@ const music = document.getElementById('music')
 
 const speaker = document.getElementById('speaker')
 const mute = document.getElementById('mute')
+
+const selectedCatergory = localStorage.getItem('category')
+const arrayCategory = JSON.parse(localStorage.getItem(selectedCatergory))
+
+const timeHeader = document.getElementById('time')
+const fmHeader = document.getElementById('board-title')
+
+let comboHighScore = 0
+let comboCount = document.getElementById('combo').innerHTML
+let triesCount = document.getElementById('tries').innerHTML
+const checks = document.getElementsByName('check')
+const matchedCards = []
+const revealTime = 2000
+const flipTime = 750
+
+if (addTimer === 'true') {
+  fmHeader.style.display = 'none'
+} else {
+  timeHeader.style.display = 'none'
+}
+
+const shuffle = array => {
+  for (let i = 0; i < array.length; i++) {
+    const j = Math.round(Math.random() * i)
+    const temp = array[i]
+    array[i] = array[j]
+    array[j] = temp
+  }
+  return array
+}
+
+const shuffledPairs = shuffle(arrayCategory).flat()
+
+const easyArray = shuffledPairs.slice(0, 18)
+const mediumArray = shuffledPairs.slice(0, 32)
+const hardArray = shuffledPairs.slice(0, 48)
+
+// select array based on what query string is passed in
+const query = parent.document.URL.match(/\?(.*)/g)[0]
+const board = document.getElementById('board')
+let timeLength
+let selectedArray
+
+if (query === '?easy') {
+  timeLength = 2
+  timeHeader.textContent = '2:00'
+  selectedArray = easyArray
+  board.classList.add('easy')
+}
+if (query === '?medium') {
+  timeLength = 3
+  timeHeader.textContent = '3:00'
+  selectedArray = mediumArray
+  board.classList.add('medium')
+}
+if (query === '?hard') {
+  timeLength = 4
+  timeHeader.textContent = '4:00'
+  selectedArray = hardArray
+  board.classList.add('hard')
+}
+
+const startTimer = (duration, display) => {
+  let timer = duration,
+    minutes,
+    seconds
+  setInterval(() => {
+    minutes = parseInt(timer / 60, 10)
+    seconds = parseInt(timer % 60, 10)
+
+    minutes = minutes < 10 ? minutes : minutes
+    seconds = seconds < 10 ? '0' + seconds : seconds
+
+    display.textContent = minutes + ':' + seconds
+
+    // stop timer if win condition is met
+    if (matchedCards.length === checks.length) {
+      return clearInterval(timer)
+    }
+
+    // if timer reaches 0, end the game
+    if (--timer < 0) {
+      timer = 0
+
+      for (let i = 0; i < checks.length; i++) {
+        checks[i].disabled = true
+      }
+
+      document.getElementById('out-of-time').style.display = 'flex'
+      document.getElementById('replay').style.display = 'inline'
+    }
+  }, 1000)
+}
+
+display = document.getElementById('time')
+
+// show cards on page load
+document.addEventListener('DOMContentLoaded', () => {
+  for (let i = 0; i < checks.length; i++) {
+    checks[i].checked = true
+  }
+
+  if (keepRevealed === 'false') {
+    setTimeout(() => {
+      for (let i = 0; i < checks.length; i++) {
+        checks[i].checked = false
+      }
+      failSound.play()
+    }, revealTime)
+  }
+
+  if (addTimer === 'true') {
+    let minutes = 60 * timeLength
+    let display = document.getElementById('time')
+    startTimer(minutes, display)
+  }
+})
 
 music.volume = musicVolume
 
@@ -133,14 +165,6 @@ mute.onclick = () => {
 
 replay.addEventListener('mouseover', () => buttonSound.play())
 newLevel.addEventListener('mouseover', () => buttonSound.play())
-
-let comboHighScore = 0
-let comboCount = document.getElementById('combo').innerHTML
-let triesCount = document.getElementById('tries').innerHTML
-const checks = document.getElementsByName('check')
-const matchedCards = []
-const revealTime = 2000
-const flipTime = 750
 
 const cardFlip = () => {
   const checkedLength = document.querySelectorAll(
