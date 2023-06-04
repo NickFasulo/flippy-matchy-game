@@ -208,8 +208,13 @@ const cardFlip = () => {
     if (compare[0].value === compare[1].value) {
       compare[0].disabled = true
       compare[1].disabled = true
+      compare[0].labels[0].children[0].children[1].classList.remove('card-border')
+      compare[1].labels[0].children[0].children[1].classList.remove('card-border')
+      compare[0].labels[0].children[0].classList.add('glowing')
+      compare[1].labels[0].children[0].classList.add('glowing')
       matchedCards.push(compare[0], compare[1])
       compare = []
+
       if (currentTries === triesCount) {
         comboCount++
         combo.innerHTML = comboCount
@@ -229,6 +234,7 @@ const cardFlip = () => {
       tries.innerHTML = triesCount
       comboCount = 0
       combo.innerHTML = comboCount
+
       setTimeout(() => {
         compare[0].checked = false
         compare[1].checked = false
@@ -278,9 +284,9 @@ const cardStrings = selectedArray
     return `<input type="checkbox" id="cardControl${i}" name="check" value="${emoji}" onclick="return cardFlip()"/>
             <label class="card" for="cardControl${i}">
               <div class="content">
-                <div class="front">
+                <div class="front card-border">
                 </div>
-                <div class="back">
+                <div class="back card-border">
                   ${emoji}
                 </div>
               </div>

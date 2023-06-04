@@ -115,7 +115,6 @@ label {
   height: 100%;
   font-size: 3rem;
   background: blanchedalmond;
-  border: 2px solid salmon;
   border-radius: 5px;
   backface-visibility: hidden;
 }
@@ -130,6 +129,10 @@ label {
   text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
 }
 
+.card-border {
+  border: 2px solid salmon;
+}
+
 #nice,
 #out-of-time {
   display: none;
@@ -141,7 +144,7 @@ label {
   z-index: 5;
   top: 45%;
   margin: 0 auto;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
 }
 
 #out-of-time {
@@ -197,6 +200,33 @@ label {
   -webkit-animation-iteration-count: 1;
 }
 
+.glowing::before {
+  content: '';
+  position: absolute;
+  left: -1.5px;
+  top: -1.5px;
+  border-radius: 7px;
+  background: linear-gradient(
+    45deg,
+    #e8f74d,
+    #ff6600d9,
+    #00ff66,
+    #13ff13,
+    #ad27ad,
+    #bd2681,
+    #6512b9,
+    #ff3300de,
+    #5aabde
+  );
+  background-size: 400%;
+  width: calc(100% + 3px);
+  height: calc(100% + 3px);
+  z-index: -1;
+  animation: glowing 30s linear infinite;
+  -moz-animation: glowing 30s linear infinite;
+  -webkit-animation: glowing 30s linear infinite;
+}
+
 @keyframes bounce {
   0% {
     transform: translateY(0);
@@ -226,6 +256,20 @@ label {
   }
   100% {
     opacity: 0;
+  }
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
   }
 }
 
