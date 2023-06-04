@@ -31,6 +31,7 @@ label {
 .board-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 40rem;
 }
 
@@ -249,6 +250,10 @@ label {
 
   .board-header h2 {
     margin-left: 2rem;
+  }
+
+  #board-title {
+    font-size: larger;
   }
 
   #board-container {
