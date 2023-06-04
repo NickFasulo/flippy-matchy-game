@@ -208,10 +208,6 @@ const cardFlip = () => {
     if (compare[0].value === compare[1].value) {
       compare[0].disabled = true
       compare[1].disabled = true
-      compare[0].labels[0].children[0].children[1].classList.remove('card-border')
-      compare[1].labels[0].children[0].children[1].classList.remove('card-border')
-      compare[0].labels[0].children[0].classList.add('glowing')
-      compare[1].labels[0].children[0].classList.add('glowing')
       matchedCards.push(compare[0], compare[1])
       compare = []
 
