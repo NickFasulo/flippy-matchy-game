@@ -219,3 +219,44 @@ button:hover {
     }
   }
 }
+
+@media screen and (max-height: 480px) and (orientation: landscape) {
+  #cloud-one {
+    top: 75px;
+    right: 10px;
+  }
+
+  #cloud-two {
+    top: 75px;
+    left: 10px;
+  }
+
+  #cloud-three {
+    bottom: 40px;
+    right: 10px;
+  }
+
+  #cloud-four {
+    bottom: 40px;
+    left: 10px;
+  }
+
+  .cloud {
+    width: 150px;
+    height: 50px;
+  }
+
+  .cloud:after {
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 25px;
+  }
+
+  .cloud:before {
+    width: 85px;
+    height: 75px;
+    top: -45px;
+    right: 20px;
+  }
+}

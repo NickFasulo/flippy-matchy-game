@@ -7,6 +7,14 @@
   height: 100vh;
 }
 
+#flippy-matchy {
+  text-align: center;
+  text-shadow: 1px 0 1px white;
+  margin: 1rem 0;
+  font-size: 4rem;
+  cursor: pointer;
+}
+
 hr {
   width: 12rem;
   height: 1px;
@@ -18,14 +26,6 @@ hr {
 
 .break {
   margin: 1.25rem 0 0;
-}
-
-.start-upper-menu h1 {
-  text-align: center;
-  text-shadow: 1px 0 1px white;
-  margin: 1rem 0;
-  font-size: 4rem;
-  cursor: pointer;
 }
 
 .flip-animation {
@@ -49,6 +49,14 @@ hr {
   }
 }
 
+.start-menu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* width: 30rem; */
+}
+
 .start-upper-menu h2 {
   text-align: center;
   text-shadow: 1px 0 1px white;
@@ -58,6 +66,7 @@ hr {
 .start-buttons {
   display: flex;
   justify-content: space-evenly;
+  width: 18rem;
 }
 
 .start-buttons a {
@@ -68,8 +77,7 @@ hr {
 .start-lower-menu {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 9.25rem;
+  width: 9.25rem;
 }
 
 .start-lower-menu h2 {
@@ -78,6 +86,7 @@ hr {
 
 .start-lower-menu button {
   width: 10rem;
+  margin: 0.8rem 0;
 }
 
 .modal {
@@ -207,6 +216,7 @@ hr {
 
 #settings-modal h3 input {
   margin-left: 1rem;
+  cursor: pointer;
 }
 
 #settings-modal h3:nth-child(4),
@@ -234,7 +244,56 @@ form input {
 }
 
 @media screen and (max-width: 480px) {
-  #start-main h1 {
+  #flippy-matchy {
     font-size: 3.25rem;
+  }
+}
+
+@media screen and (max-height: 480px) and (orientation: landscape) {
+  #flippy-matchy {
+    font-size: 3.25rem;
+  }
+
+  #start-main {
+    justify-content: space-evenly;
+  }
+
+  #start-main hr {
+    display: none;
+  }
+
+  .start-menu-container {
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+  .start-upper-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 20rem;
+    height: 8rem;
+  }
+
+  .start-upper-menu h2 {
+    margin-top: 0;
+  }
+
+  .start-lower-menu {
+    flex-direction: row;
+    align-items: center;
+    width: 20rem;
+    height: 8rem;
+  }
+
+  .start-lower-menu button {
+    margin: 1rem 0;
+  }
+
+  .start-lower-left,
+  .start-lower-right {
+    width: 50%;
   }
 }

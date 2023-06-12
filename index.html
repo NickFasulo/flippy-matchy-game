@@ -30,131 +30,148 @@
   </head>
   <body>
     <main id="start-main">
-      <div class="start-upper-menu">
-        <h1 id="flippy-matchy" class="flip-animation">Flippy Matchy</h1>
-        <h2>Select level to start:</h2>
-        <div class="start-buttons">
-          <a href="board.html?easy" class="menu-button">Easy</a>
-          <a href="board.html?medium" class="menu-button">Medium</a>
-          <a href="board.html?hard" class="menu-button">Hard</a>
+      <h1 id="flippy-matchy" class="flip-animation">Flippy Matchy</h1>
+      <div class="start-menu-container">
+        <div class="start-upper-menu">
+          <h2>Select level to start:</h2>
+          <div class="start-buttons">
+            <a href="board.html?easy" class="menu-button">Easy</a>
+            <a href="board.html?medium" class="menu-button">Medium</a>
+            <a href="board.html?hard" class="menu-button">Hard</a>
+          </div>
         </div>
-      </div>
-      <hr />
-      <div class="start-lower-menu">
-        <button id="hs-button" class="menu-button">High Scores</button>
-        <div id="hs-modal" class="modal">
-          <div class="modal-content">
-            <span id="hs-close">X</span>
-            <div class="modal-highscores">
-              <section>
-                <header>Lowest<br />Tries</header>
-                <div>
-                  <h3>Easy: <span id="easy-hs">---</span></h3>
-                  <h3>Medium: <span id="medium-hs">---</span></h3>
-                  <h3>Hard: <span id="hard-hs">---</span></h3>
+        <hr />
+        <div class="start-lower-menu">
+          <div class="start-lower-left">
+            <button id="hs-button" class="menu-button">High Scores</button>
+            <div id="hs-modal" class="modal">
+              <div class="modal-content">
+                <span id="hs-close">X</span>
+                <div class="modal-highscores">
+                  <section>
+                    <header>Lowest<br />Tries</header>
+                    <div>
+                      <h3>Easy: <span id="easy-hs">---</span></h3>
+                      <h3>Medium: <span id="medium-hs">---</span></h3>
+                      <h3>Hard: <span id="hard-hs">---</span></h3>
+                    </div>
+                  </section>
+                  <section>
+                    <header>Highest<br />Combo</header>
+                    <div>
+                      <h3>Easy: <span id="easy-combo">---</span></h3>
+                      <h3>Medium: <span id="medium-combo">---</span></h3>
+                      <h3>Hard: <span id="hard-combo">---</span></h3>
+                    </div>
+                  </section>
                 </div>
-              </section>
-              <section>
-                <header>Highest<br />Combo</header>
-                <div>
-                  <h3>Easy: <span id="easy-combo">---</span></h3>
-                  <h3>Medium: <span id="medium-combo">---</span></h3>
-                  <h3>Hard: <span id="hard-combo">---</span></h3>
-                </div>
-              </section>
+              </div>
+            </div>
+            <button id="cat-button" class="menu-button">Categories</button>
+            <div id="cat-modal" class="modal">
+              <div class="modal-content">
+                <span id="cat-close">X</span>
+                <form id="cat-form">
+                  <input
+                    type="radio"
+                    id="original"
+                    name="category"
+                    value="originalArray"
+                  />
+                  <label for="original">Original</label><br />
+                  <input
+                    type="radio"
+                    id="fruitNveggies"
+                    name="category"
+                    value="fruitNvegArray"
+                  />
+                  <label for="fruitNveggies">Fruit'n'Veggies</label><br />
+                  <input
+                    type="radio"
+                    id="music"
+                    name="category"
+                    value="musicArray"
+                  />
+                  <label for="music">Music</label><br />
+                  <input
+                    type="radio"
+                    id="sports"
+                    name="category"
+                    value="sportArray"
+                  />
+                  <label for="sports">Sports</label><br />
+                  <input
+                    type="radio"
+                    id="food"
+                    name="category"
+                    value="foodArray"
+                  />
+                  <label for="food">Food</label><br />
+                  <input
+                    type="radio"
+                    id="animals"
+                    name="category"
+                    value="animalArray"
+                  />
+                  <label for="animals">Animals</label><br />
+                  <input
+                    type="radio"
+                    id="space"
+                    name="category"
+                    value="spaceArray"
+                  />
+                  <label for="space">Space</label>
+                </form>
+              </div>
             </div>
           </div>
-        </div>
-        <button id="cat-button" class="menu-button">Categories</button>
-        <div id="cat-modal" class="modal">
-          <div class="modal-content">
-            <span id="cat-close">X</span>
-            <form id="cat-form">
-              <input
-                type="radio"
-                id="original"
-                name="category"
-                value="originalArray"
-              />
-              <label for="original">Original</label><br />
-              <input
-                type="radio"
-                id="fruitNveggies"
-                name="category"
-                value="fruitNvegArray"
-              />
-              <label for="fruitNveggies">Fruit'n'Veggies</label><br />
-              <input
-                type="radio"
-                id="music"
-                name="category"
-                value="musicArray"
-              />
-              <label for="music">Music</label><br />
-              <input
-                type="radio"
-                id="sports"
-                name="category"
-                value="sportArray"
-              />
-              <label for="sports">Sports</label><br />
-              <input
-                type="radio"
-                id="food"
-                name="category"
-                value="foodArray"
-              />
-              <label for="food">Food</label><br />
-              <input
-                type="radio"
-                id="animals"
-                name="category"
-                value="animalArray"
-              />
-              <label for="animals">Animals</label><br />
-              <input
-                type="radio"
-                id="space"
-                name="category"
-                value="spaceArray"
-              />
-              <label for="space">Space</label>
-            </form>
-          </div>
-        </div>
-        <button id="unlocks-button" class="menu-button">Unlocks</button>
-        <div id="unlocks-modal" class="modal">
-          <div class="modal-content">
-            <span id="unlocks-close">X</span>
-            <h2>Unlocks</h2>
-            <div class="unlocks-modal-content">
-              <section>
-                <h3>Fruit'n'Veggies</h3>
-                <p>finish an easy level</p>
-                <h3>Music</h3>
-                <p>finish a medium level</p>
-                <h3>Sports</h3>
-                <p>finish a hard level</p>
-              </section>
-              <section>
-                <h3>Food</h3>
-                <p>combo of at least 3</p>
-                <h3>Animals</h3>
-                <p>combo of at least 4</p>
-                <h3>Space</h3>
-                <p>combo of at least 5</p>
-              </section>
+          <div class="start-lower-right">
+            <button id="unlocks-button" class="menu-button">Unlocks</button>
+            <div id="unlocks-modal" class="modal">
+              <div class="modal-content">
+                <span id="unlocks-close">X</span>
+                <h2>Unlocks</h2>
+                <div class="unlocks-modal-content">
+                  <section>
+                    <h3>Fruit'n'Veggies</h3>
+                    <p>finish an easy level</p>
+                    <h3>Music</h3>
+                    <p>finish a medium level</p>
+                    <h3>Sports</h3>
+                    <p>finish a hard level</p>
+                  </section>
+                  <section>
+                    <h3>Food</h3>
+                    <p>combo of at least 3</p>
+                    <h3>Animals</h3>
+                    <p>combo of at least 4</p>
+                    <h3>Space</h3>
+                    <p>combo of at least 5</p>
+                  </section>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <button id="settings-button" class="menu-button">Settings</button>
-        <div id="settings-modal" class="modal">
-          <div class="modal-content">
-            <span id="settings-close">X</span>
-            <h3>Music volume</h3>
-            <input type="range" min="0.1" max="1" step="0.01" id="music-vol-control">
-            <h3>Keep cards<br />revealed at start<input type="checkbox" id="set-revealed"></h3>
-            <h3>Add time limit<input type="checkbox" id="set-timer"></h3>
+            <button id="settings-button" class="menu-button">Settings</button>
+            <div id="settings-modal" class="modal">
+              <div class="modal-content">
+                <span id="settings-close">X</span>
+                <h3>Music volume</h3>
+                <input
+                  type="range"
+                  min="0.1"
+                  max="1"
+                  step="0.01"
+                  id="music-vol-control"
+                />
+                <h3>
+                  Keep cards<br />revealed at start<input
+                    type="checkbox"
+                    id="set-revealed"
+                  />
+                </h3>
+                <h3>Add time limit<input type="checkbox" id="set-timer" /></h3>
+              </div>
+            </div>
           </div>
         </div>
       </div>
