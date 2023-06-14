@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&family=Nerko+One&family=Roboto&display=swap');
 
-html,
+/* html,
 body {
   overflow-x: hidden;
-}
+} */
 
 body {
   margin: 0;
@@ -138,125 +138,7 @@ button:hover {
 }
 
 @media screen and (max-width: 480px) {
-  a,
-  button {
-    font-size: 1.3rem;
-    height: 1.5rem;
-    width: 9rem;
-  }
-
-  a:hover,
-  button:hover {
-    font-size: 1.3rem;
-  }
-
-  #cloud-one {
-    top: 125px;
-    right: 10px;
-  }
-
-  #cloud-two {
-    top: 125px;
-    left: 10px;
-  }
-
-  #cloud-three {
-    bottom: 100px;
-    right: 10px;
-  }
-
-  #cloud-four {
-    bottom: 100px;
-    left: 10px;
-  }
-
   .cloud {
-    width: 150px;
-    height: 50px;
-  }
-
-  .cloud:after {
-    width: 50px;
-    height: 50px;
-    top: -25px;
-    left: 25px;
-  }
-
-  .cloud:before {
-    width: 85px;
-    height: 75px;
-    top: -45px;
-    right: 20px;
-  }
-
-  @keyframes float-one {
-    0% {
-      transform: translatex(0);
-    }
-    33% {
-      transform: translatex(-50px);
-    }
-    66% {
-      transform: translatex(50px);
-    }
-    100% {
-      transform: translatex(0);
-    }
-  }
-
-  @keyframes float-two {
-    0% {
-      transform: translatex(0);
-    }
-    33% {
-      transform: translatex(50px);
-    }
-    66% {
-      transform: translatex(-50px);
-    }
-    100% {
-      transform: translatex(0);
-    }
-  }
-}
-
-@media screen and (max-height: 480px) and (orientation: landscape) {
-  #cloud-one {
-    top: 75px;
-    right: 10px;
-  }
-
-  #cloud-two {
-    top: 75px;
-    left: 10px;
-  }
-
-  #cloud-three {
-    bottom: 40px;
-    right: 10px;
-  }
-
-  #cloud-four {
-    bottom: 40px;
-    left: 10px;
-  }
-
-  .cloud {
-    width: 150px;
-    height: 50px;
-  }
-
-  .cloud:after {
-    width: 50px;
-    height: 50px;
-    top: -25px;
-    left: 25px;
-  }
-
-  .cloud:before {
-    width: 85px;
-    height: 75px;
-    top: -45px;
-    right: 20px;
+    display: none;
   }
 }

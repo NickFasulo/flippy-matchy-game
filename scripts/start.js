@@ -24,10 +24,12 @@ const musicVolControl = document.getElementById('music-vol-control')
 const setRevealed = document.getElementById('set-revealed')
 const setTimer = document.getElementById('set-timer')
 
+// add sound to menu buttons on hover
 for (let i = 0; i < startButtons.length; i++) {
   startButtons[i].addEventListener('mouseover', () => buttonSound.play())
 }
 
+// trigger menu title flip animation on click
 flippyMatchy.onclick = () => {
   flippyMatchy.classList.remove('flip-animation')
   void flippyMatchy.offsetWidth
@@ -38,10 +40,10 @@ flippyMatchy.onclick = () => {
   }, 500)
 }
 
+// display modals on start menu button click
 hsButton.onclick = () => {
   hsModal.style.display = 'block'
 }
-
 catButton.onclick = () => {
   catModal.style.display = 'block'
   for (let i = 0; i < catInputs.length; i++) {
@@ -50,19 +52,18 @@ catButton.onclick = () => {
     }
   }
 }
-
 unlocksButton.onclick = () => {
   unlocksModal.style.display = 'block'
 }
-
 settingsButton.onclick = () => {
   settingsModal.style.display = 'block'
 }
 
+// close modal on close button click
 hsCloseBttn.onclick = () => {
   hsModal.style.display = 'none'
 }
-
+// set category preference to local storage based on input selected from category modal
 catCloseBttn.onclick = () => {
   catModal.style.display = 'none'
   for (let i = 0; i < catInputs.length; i++) {
@@ -71,15 +72,14 @@ catCloseBttn.onclick = () => {
     }
   }
 }
-
 unlocksCloseBttn.onclick = () => {
   unlocksModal.style.display = 'none'
 }
-
 settingsCloseBttn.onclick = () => {
   settingsModal.style.display = 'none'
 }
 
+// close modal on click outside of modal
 window.onclick = event => {
   if (event.target === hsModal) {
     hsModal.style.display = 'none'
@@ -100,6 +100,7 @@ window.onclick = event => {
   }
 }
 
+// set timer preference to local storage
 if (!localStorage.getItem('addTimer')) {
   localStorage.setItem('addTimer', false)
 }
@@ -110,6 +111,7 @@ if (localStorage.getItem('addTimer') === 'true') {
   setTimer.checked = true
 }
 
+// set cards revealed at start preference to local storage
 if (!localStorage.getItem('keepRevealed')) {
   localStorage.setItem('keepRevealed', false)
 }
@@ -120,6 +122,7 @@ if (localStorage.getItem('keepRevealed') === 'true') {
   setRevealed.checked = true
 }
 
+// set music on/off and volume preference to local storage
 if (!localStorage.getItem('playMusic')) {
   localStorage.setItem('playMusic', true)
 }
@@ -132,10 +135,12 @@ musicVolControl.addEventListener('input', function (e) {
 })
 musicVolControl.value = localStorage.getItem('musicVolume')
 
+// set emoji category preference to local storage
 if (!localStorage.getItem('category')) {
   localStorage.setItem('category', 'originalArray')
 }
 
+// set lowest tries for each level to local storage
 if (!localStorage.getItem('easyLowestTries')) {
   localStorage.setItem('easyLowestTries', 99999)
 }
@@ -146,6 +151,7 @@ if (!localStorage.getItem('hardLowestTries')) {
   localStorage.setItem('hardLowestTries', 99999)
 }
 
+// set highest combo for each level to local storage
 if (!localStorage.getItem('easyHighestCombo')) {
   localStorage.setItem('easyHighestCombo', 1)
 }
@@ -164,6 +170,7 @@ const easyHighestCombo = localStorage.getItem('easyHighestCombo')
 const mediumHighestCombo = localStorage.getItem('mediumHighestCombo')
 const hardHighestCombo = localStorage.getItem('hardHighestCombo')
 
+// if there are "lowest tries" set for a level, display on high scores modal.
 if (easyLowestTries < 99999) {
   document.getElementById('easy-hs').innerText = easyLowestTries
 }
@@ -174,6 +181,7 @@ if (hardLowestTries < 99999) {
   document.getElementById('hard-hs').innerText = hardLowestTries
 }
 
+// if there is a "highest combo" set for a level, display on high scores modal.
 if (easyHighestCombo > 1) {
   document.getElementById('easy-combo').innerText = easyHighestCombo
 }
@@ -184,12 +192,14 @@ if (hardHighestCombo > 1) {
   document.getElementById('hard-combo').innerText = hardHighestCombo
 }
 
+// highest combo out of all highest combos hit for each level
 const highestCombo = Math.max(
   parseInt(easyHighestCombo),
   parseInt(mediumHighestCombo),
   parseInt(hardHighestCombo)
 )
 
+// disable input for categories if they haven't been unlocked
 for (let i = 1; i < radios.length; i++) {
   if (i === 1 && easyLowestTries === '99999') {
     radios[i].setAttribute('disabled', '')
