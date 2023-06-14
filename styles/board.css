@@ -13,7 +13,6 @@ label {
   flex-direction: column;
   justify-content: center;
   height: 100vh;
-  overflow-x: hidden;
 }
 
 #mute,

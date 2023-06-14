@@ -63,7 +63,7 @@ settingsButton.onclick = () => {
 hsCloseBttn.onclick = () => {
   hsModal.style.display = 'none'
 }
-// set category preference to local storage based on input selected from category modal
+// set category preference to local storage based on input selected from category modal on close
 catCloseBttn.onclick = () => {
   catModal.style.display = 'none'
   for (let i = 0; i < catInputs.length; i++) {
@@ -135,12 +135,12 @@ musicVolControl.addEventListener('input', function (e) {
 })
 musicVolControl.value = localStorage.getItem('musicVolume')
 
-// set emoji category preference to local storage
+// set emoji category preference to local storage if not already set
 if (!localStorage.getItem('category')) {
   localStorage.setItem('category', 'originalArray')
 }
 
-// set lowest tries for each level to local storage
+// set lowest tries for each level to local storage if not already set
 if (!localStorage.getItem('easyLowestTries')) {
   localStorage.setItem('easyLowestTries', 99999)
 }
@@ -151,7 +151,7 @@ if (!localStorage.getItem('hardLowestTries')) {
   localStorage.setItem('hardLowestTries', 99999)
 }
 
-// set highest combo for each level to local storage
+// set highest combo for each level to local storage if not already set
 if (!localStorage.getItem('easyHighestCombo')) {
   localStorage.setItem('easyHighestCombo', 1)
 }
