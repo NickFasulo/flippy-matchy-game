@@ -63,7 +63,7 @@ const easyArray = shuffledPairs.slice(0, 18)
 const mediumArray = shuffledPairs.slice(0, 32)
 const hardArray = shuffledPairs.slice(0, 48)
 
-// select array based on what query string is passed in
+// select array and set time based on what query string is passed in
 const query = parent.document.URL.match(/\?(.*)/g)[0]
 const board = document.getElementById('board')
 let timeLength

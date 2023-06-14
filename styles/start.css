@@ -240,7 +240,8 @@ form input {
     font-size: 3.25rem;
   }
 
-  #start-main {
+  body,
+  html {
     overflow: hidden;
   }
 
