@@ -4,6 +4,9 @@ const hsCloseBttn = document.getElementById('hs-close')
 const catModal = document.getElementById('cat-modal')
 const catButton = document.getElementById('cat-button')
 const catCloseBttn = document.getElementById('cat-close')
+const catLabels = document
+  .getElementById('cat-form')
+  .getElementsByTagName('label')
 const catInputs = document
   .getElementById('cat-form')
   .getElementsByTagName('input')
@@ -17,7 +20,6 @@ const startButtons = document.querySelectorAll('button, a')
 const buttonSound = document.getElementById('button-sound')
 const flippyMatchy = document.getElementById('flippy-matchy')
 const radios = document.querySelectorAll('input[type=radio]')
-const labels = document.getElementsByTagName('label')
 const flipSound = document.getElementById('flip-sound')
 const failSound = document.getElementById('fail-sound')
 const musicVolControl = document.getElementById('music-vol-control')
@@ -192,7 +194,7 @@ if (hardHighestCombo > 1) {
   document.getElementById('hard-combo').innerText = hardHighestCombo
 }
 
-// highest combo out of all highest combos hit for each level
+// highest combo out of all of the highest combos hit for each level
 const highestCombo = Math.max(
   parseInt(easyHighestCombo),
   parseInt(mediumHighestCombo),
