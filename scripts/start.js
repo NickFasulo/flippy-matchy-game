@@ -205,32 +205,38 @@ const highestCombo = Math.max(
 for (let i = 1; i < radios.length; i++) {
   if (i === 1 && easyLowestTries === '99999') {
     radios[i].setAttribute('disabled', '')
-    labels[i].style.opacity = 0.5
-    labels[i].style.cursor = 'default'
+    radios[i].style.cursor = 'default'
+    catLabels[i].style.opacity = 0.5
+    catLabels[i].style.cursor = 'default'
   }
   if (i === 2 && mediumLowestTries === '99999') {
     radios[i].setAttribute('disabled', '')
-    labels[i].style.opacity = 0.5
-    labels[i].style.cursor = 'default'
+    radios[i].style.cursor = 'default'
+    catLabels[i].style.opacity = 0.5
+    catLabels[i].style.cursor = 'default'
   }
   if (i === 3 && hardLowestTries === '99999') {
     radios[i].setAttribute('disabled', '')
-    labels[i].style.opacity = 0.5
-    labels[i].style.cursor = 'default'
+    radios[i].style.cursor = 'default'
+    catLabels[i].style.opacity = 0.5
+    catLabels[i].style.cursor = 'default'
   }
   if (i === 4 && highestCombo < 3) {
     radios[i].setAttribute('disabled', '')
-    labels[i].style.opacity = 0.5
-    labels[i].style.cursor = 'default'
+    radios[i].style.cursor = 'default'
+    catLabels[i].style.opacity = 0.5
+    catLabels[i].style.cursor = 'default'
   }
   if (i === 5 && highestCombo < 4) {
     radios[i].setAttribute('disabled', '')
-    labels[i].style.opacity = 0.5
-    labels[i].style.cursor = 'default'
+    radios[i].style.cursor = 'default'
+    catLabels[i].style.opacity = 0.5
+    catLabels[i].style.cursor = 'default'
   }
   if (i === 6 && highestCombo < 5) {
     radios[i].setAttribute('disabled', '')
-    labels[i].style.opacity = 0.5
-    labels[i].style.cursor = 'default'
+    radios[i].style.cursor = 'default'
+    catLabels[i].style.opacity = 0.5
+    catLabels[i].style.cursor = 'default'
   }
 }
