@@ -10,6 +10,9 @@ const catLabels = document
 const catInputs = document
   .getElementById('cat-form')
   .getElementsByTagName('input')
+const catRadios = document
+  .getElementById('cat-form')
+  .querySelectorAll('input[type=radio]')
 const unlocksModal = document.getElementById('unlocks-modal')
 const unlocksButton = document.getElementById('unlocks-button')
 const unlocksCloseBttn = document.getElementById('unlocks-close')
@@ -19,7 +22,6 @@ const settingsCloseBttn = document.getElementById('settings-close')
 const startButtons = document.querySelectorAll('button, a')
 const buttonSound = document.getElementById('button-sound')
 const flippyMatchy = document.getElementById('flippy-matchy')
-const radios = document.querySelectorAll('input[type=radio]')
 const flipSound = document.getElementById('flip-sound')
 const failSound = document.getElementById('fail-sound')
 const musicVolControl = document.getElementById('music-vol-control')
@@ -202,40 +204,40 @@ const highestCombo = Math.max(
 )
 
 // disable input for categories if they haven't been unlocked
-for (let i = 1; i < radios.length; i++) {
+for (let i = 1; i < catRadios.length; i++) {
   if (i === 1 && easyLowestTries === '99999') {
-    radios[i].setAttribute('disabled', '')
-    radios[i].style.cursor = 'default'
+    catRadios[i].setAttribute('disabled', '')
+    catRadios[i].style.cursor = 'default'
     catLabels[i].style.opacity = 0.5
     catLabels[i].style.cursor = 'default'
   }
   if (i === 2 && mediumLowestTries === '99999') {
-    radios[i].setAttribute('disabled', '')
-    radios[i].style.cursor = 'default'
+    catRadios[i].setAttribute('disabled', '')
+    catRadios[i].style.cursor = 'default'
     catLabels[i].style.opacity = 0.5
     catLabels[i].style.cursor = 'default'
   }
   if (i === 3 && hardLowestTries === '99999') {
-    radios[i].setAttribute('disabled', '')
-    radios[i].style.cursor = 'default'
+    catRadios[i].setAttribute('disabled', '')
+    catRadios[i].style.cursor = 'default'
     catLabels[i].style.opacity = 0.5
     catLabels[i].style.cursor = 'default'
   }
   if (i === 4 && highestCombo < 3) {
-    radios[i].setAttribute('disabled', '')
-    radios[i].style.cursor = 'default'
+    catRadios[i].setAttribute('disabled', '')
+    catRadios[i].style.cursor = 'default'
     catLabels[i].style.opacity = 0.5
     catLabels[i].style.cursor = 'default'
   }
   if (i === 5 && highestCombo < 4) {
-    radios[i].setAttribute('disabled', '')
-    radios[i].style.cursor = 'default'
+    catRadios[i].setAttribute('disabled', '')
+    catRadios[i].style.cursor = 'default'
     catLabels[i].style.opacity = 0.5
     catLabels[i].style.cursor = 'default'
   }
   if (i === 6 && highestCombo < 5) {
-    radios[i].setAttribute('disabled', '')
-    radios[i].style.cursor = 'default'
+    catRadios[i].setAttribute('disabled', '')
+    catRadios[i].style.cursor = 'default'
     catLabels[i].style.opacity = 0.5
     catLabels[i].style.cursor = 'default'
   }
