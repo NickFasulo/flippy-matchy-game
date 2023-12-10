@@ -32,6 +32,7 @@ button {
   background-color: transparent;
   width: 8rem;
   height: 1rem;
+  transition: font-size 0.1s;
 }
 
 a:hover,
