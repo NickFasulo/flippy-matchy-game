@@ -46,10 +46,10 @@ flippyMatchy.onclick = () => {
 
 // display modals on start menu button click
 hsButton.onclick = () => {
-  hsModal.style.display = 'block'
+  $(hsModal).fadeIn(300)
 }
 catButton.onclick = () => {
-  catModal.style.display = 'block'
+  $(catModal).fadeIn(300)
   for (let i = 0; i < catInputs.length; i++) {
     if (catInputs[i].value === localStorage.getItem('category')) {
       catInputs[i].checked = true
@@ -57,19 +57,19 @@ catButton.onclick = () => {
   }
 }
 unlocksButton.onclick = () => {
-  unlocksModal.style.display = 'block'
+  $(unlocksModal).fadeIn(300)
 }
 settingsButton.onclick = () => {
-  settingsModal.style.display = 'block'
+  $(settingsModal).fadeIn(300)
 }
 
 // close modal on close button click
 hsCloseBttn.onclick = () => {
-  hsModal.style.display = 'none'
+  $(hsModal).fadeOut(300)
 }
 // set category preference to local storage based on input selected from category modal on close
 catCloseBttn.onclick = () => {
-  catModal.style.display = 'none'
+  $(catModal).fadeOut(300)
   for (let i = 0; i < catInputs.length; i++) {
     if (catInputs[i].checked) {
       localStorage.setItem('category', catInputs[i].value)
@@ -77,16 +77,16 @@ catCloseBttn.onclick = () => {
   }
 }
 unlocksCloseBttn.onclick = () => {
-  unlocksModal.style.display = 'none'
+  $(unlocksModal).fadeOut(300)
 }
 settingsCloseBttn.onclick = () => {
-  settingsModal.style.display = 'none'
+  $(settingsModal).fadeOut(300)
 }
 
 // close modal on click outside of modal
 window.onclick = event => {
   if (event.target === hsModal) {
-    hsModal.style.display = 'none'
+    $(hsModal).fadeOut(300)
   }
   if (event.target === catModal) {
     for (let i = 0; i < catInputs.length; i++) {
@@ -94,13 +94,13 @@ window.onclick = event => {
         localStorage.setItem('category', catInputs[i].value)
       }
     }
-    catModal.style.display = 'none'
+    $(catModal).fadeOut(300)
   }
   if (event.target === unlocksModal) {
-    unlocksModal.style.display = 'none'
+    $(unlocksModal).fadeOut(300)
   }
   if (event.target === settingsModal) {
-    settingsModal.style.display = 'none'
+    $(settingsModal).fadeOut(300)
   }
 }
 
